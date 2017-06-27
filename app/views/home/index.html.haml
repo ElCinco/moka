@@ -1,2 +1,15 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.erb
+=render '/partials/header'
+=render 'quote_form'
+
+%ul.resources-parent
+  / <li><img src="", class="resources-img" /></li>
+  %li
+    %ul.resource-list
+      %li
+        %h4 Resources
+      %li
+        %a.strikethrough{:href => ""} Chat with a live agent
+      %li
+        %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
+      %li
+        %a{:href => "/faqs"} FAQs

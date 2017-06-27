@@ -1,0 +1,32 @@
+// Standard button styes START //////////////////////////////
+.empty {height:-10px}
+%button {
+  height: 34px;
+  background: rgba(152,187,127,0.7);
+  display: inline-block;
+  width: 120px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  color: #ffffff;
+  font-style: normal;
+  cursor: pointer;
+  margin-top: 16px;
+  padding:initial;
+  text-align: center;
+  &:hover {
+    background: rgba(152,187,127,1);
+  }
+  &:active {
+    background: rgba(152,187,127,.5);
+  }
+  &:focus {
+    background: rgba(152,187,127,.5);
+    outline: none;
+    border: 3px solid rgba(152,187,127, 1)
+  }
+}
+// standard button styes END //////////////////////////////

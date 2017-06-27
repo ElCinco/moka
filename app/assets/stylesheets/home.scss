@@ -1,3 +1,64 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'placeholders.scss';
+
+// Top level styes START //////////////////////////////
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline-color: rgba(152,187,127,.8);
+  }
+}
+body {
+  font-family: -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 1280px;
+  margin: auto;
+  position:relative;
+}
+// Top level styes END //////////////////////////////
+
+// Global classes styes END //////////////////////////////
+.strikethrough {
+  text-decoration: line-through;
+}
+.button {
+  @extend %button
+}
+
+// Header styes START //////////////////////////////
+nav {
+  position: absolute;
+  width:100%;
+  padding:18px;
+  > a img {
+    width:120px;
+  }
+  h5 {
+    position: absolute;
+    left: 146px;
+    top: 23px;
+  }
+}
+// Header styes END //////////////////////////////
+
+body.index-small {
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-left: -50px;
+  }
+
+  .resources-parent {
+    display:flex;
+    justify-content: flex-end;
+    width:80%;
+    > * { //direct descendents
+      padding:10px;
+    }
+    .resources-img {
+      width:100%;
+    }
+  }
+
+}
