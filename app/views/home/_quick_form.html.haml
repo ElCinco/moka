@@ -1,25 +1,31 @@
 %label I'm a
-%input#name{:name => "name", :placeholder => "10", :tabindex => "1", :type => "text"}/
+%input{:name => "name", :placeholder => "10", :tabindex => "1", :type => "text"}
 
 %label year old
-%input#name{:name => "name", :placeholder => "turkey", :tabindex => "1", :type => "text"}/
+%input{:name => "name", :placeholder => "turkey", :tabindex => "1", :type => "text"}
+%br
 
-%label from
-%input#name{:name => "name", :placeholder => "virginia", :tabindex => "1", :type => "text"}/
+%label I live in
+%input{:name => "name", :placeholder => "virginia", :tabindex => "1", :type => "text"}
 
-%label That
-%input#name{:name => "name", :placeholder => "doesn't", :tabindex => "1", :type => "text"}/
+%label & I
+%input{:name => "name", :placeholder => "don't", :tabindex => "1", :type => "text"}
 
 %label use tobacco.
-%label Get backto me using
+
+%br
+%label Contact me using
 
 %select{:tabindex => "1"}
   %option{:value => "email"} email
   %option{:value => "text"} text
   %option{:value => "voice"} voice
 
+%br
 %input#name{:name => "name", :placeholder => "email@yours.com", :tabindex => "1", :type => "text"}/
+%br
 
 %input.button.next{:tabindex => "1", :type => "submit", :value => "Submit"}/
-%span or
-%span.button-next{:tabindex => "1"} Detailed Quote
+
+-# %span or
+-# %span.button-next{:tabindex => "1"} Detailed Quote

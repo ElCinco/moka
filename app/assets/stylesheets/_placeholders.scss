@@ -2,7 +2,7 @@
 .empty {height:-10px}
 %button {
   height: 34px;
-  background: rgba(152,187,127,0.7);
+  background: rgba(36,145,205,0.7);
   display: inline-block;
   width: 120px;
   border-radius: 6px;
@@ -18,15 +18,15 @@
   padding:initial;
   text-align: center;
   &:hover {
-    background: rgba(152,187,127,1);
+    background: rgba(36,145,205,1);
   }
   &:active {
-    background: rgba(152,187,127,.5);
+    background: rgba(36,145,205,.5);
   }
   &:focus {
-    background: rgba(152,187,127,.5);
+    background: rgba(36,145,205,.5);
     outline: none;
-    border: 3px solid rgba(152,187,127, 1)
+    border: 3px solid rgba(36,145,205, 1)
   }
 }
 // standard button styes END //////////////////////////////

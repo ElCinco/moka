@@ -20,10 +20,13 @@ h2 {
   color:#b3daee;
   font-size: 24px;
   font-family: georgia;
+  margin: 48px 0;
+  line-height: 1;
 }
 h4 {
   font-size: 30px;
   font-family: georgia;
+  line-height: 1;
 }
 // Top level styes END //////////////////////////////
 
@@ -36,17 +39,27 @@ h4 {
 }
 
 .content {
-  max-width: 660px;
+  max-width: 780px;
   margin: auto;
   display: flex;
   justify-content: space-around;
+  > * {
+    padding:40px 30px;
+  }
 }
-.resources-parent {
-  display:flex;
-  justify-content: flex-end;
-  width:80%;
-
-  .resources-img {
-    width:100%;
+.resource-list {
+  width:240px;
+  h4 {
+    border-bottom:1px solid #2491cd;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  li {
+    padding-left: 1rem;
+    text-indent: -.7rem;
+    &:nth-child(n+2):before {
+      content: "• ";
+      color: #2491cd; 
+    }
   }
 }

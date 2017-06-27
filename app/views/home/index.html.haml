@@ -3,15 +3,12 @@
 .content
   =render 'quote_form'
 
-  %ul.resources-parent
-    / <li><img src="", class="resources-img" /></li>
+  %ul.resource-list
     %li
-      %ul.resource-list
-        %li
-          %h4 Resources
-        %li
-          %a.strikethrough{:href => ""} Chat with a live agent
-        %li
-          %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
-        %li
-          %a{:href => "/faqs"} FAQs
+      %h4 Life Insurance Answers
+    %li
+      %a.strikethrough{:href => ""} Chat with a live agent
+    %li
+      %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
+    %li
+      %a{:href => "/faqs"} FAQs
