@@ -1,56 +1,52 @@
 @import '_placeholders.scss';
 
-.form-aligner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 5% 90px 5%;
-  .quote-wrapper {
-    .inactive {
-  //    margin-top
-    }
-    form {
-      transition: height .7s;
-      overflow: hidden;
-      padding: 3px;
-      > div {
-        margin-bottom: 120px;
-      }
-    }
-    .quick-form {
-      transition: margin .7s;
-    }
-    .quick-form, .detailed-form {
-      padding:3px;
-    }
-    label {
-      font-size: 24px;
-      font-weight: 300;
-      color: #2e401f;
-      @media screen and (max-width: 860px) {
-        font-size: 26px;
-      }
-      .display-ampersand {
-        color:rgba(0,0,0,.3);
-      }
-    }
-    input {
-      border:none;
-      background:transparent;
-      border-bottom:1px solid rgba(0,0,0,.7);
-      font-size: 1em;
-      text-align: center;
-      color: rgb(152,187,127);
-      width: 100px;
-      padding-top:16px;
 
-      &.button {
-        @extend %button
-      }
-      &::placeholder {
-        color: rgba(0,0,0,.25);
-        font-style: italic;
-      }
+.quote-wrapper {
+  max-width: 428px;
+  .inactive {
+//    margin-top
+  }
+  form {
+    transition: height .7s;
+    overflow: hidden;
+    padding: 3px;
+    > div {
+      margin-bottom: 120px;
+    }
+  }
+  .quick-form {
+    transition: margin .7s;
+  }
+  .quick-form, .detailed-form {
+    padding:3px;
+  }
+  label {
+    font-size: 24px;
+    font-weight: 300;
+    color: #2e401f;
+    @media screen and (max-width: 860px) {
+      font-size: 26px;
+    }
+    .display-ampersand {
+      color:rgba(0,0,0,.3);
+    }
+  }
+  input {
+    border:none;
+    background:transparent;
+    border-bottom:1px solid rgba(0,0,0,.7);
+    font-size: 1em;
+    text-align: center;
+    color: rgb(152,187,127);
+    width: 100px;
+    padding-top:16px;
+
+    &.button {
+      @extend %button
+    }
+    &::placeholder {
+      color: rgba(0,0,0,.25);
+      font-style: italic;
     }
   }
 }

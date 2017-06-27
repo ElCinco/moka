@@ -1,15 +1,17 @@
-=render '/partials/header'
-=render 'quote_form'
+%h2 The coverage you need made simple
 
-%ul.resources-parent
-  / <li><img src="", class="resources-img" /></li>
-  %li
-    %ul.resource-list
-      %li
-        %h4 Resources
-      %li
-        %a.strikethrough{:href => ""} Chat with a live agent
-      %li
-        %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
-      %li
-        %a{:href => "/faqs"} FAQs
+.content
+  =render 'quote_form'
+
+  %ul.resources-parent
+    / <li><img src="", class="resources-img" /></li>
+    %li
+      %ul.resource-list
+        %li
+          %h4 Resources
+        %li
+          %a.strikethrough{:href => ""} Chat with a live agent
+        %li
+          %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
+        %li
+          %a{:href => "/faqs"} FAQs

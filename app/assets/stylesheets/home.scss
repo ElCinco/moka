@@ -15,6 +15,9 @@ body {
   margin: auto;
   position:relative;
 }
+h2 {
+  text-align: center;
+}
 // Top level styes END //////////////////////////////
 
 // Global classes styes END //////////////////////////////
@@ -25,40 +28,20 @@ body {
   @extend %button
 }
 
-// Header styes START //////////////////////////////
-nav {
-  position: absolute;
-  width:100%;
-  padding:18px;
-  > a img {
-    width:120px;
-  }
-  h5 {
-    position: absolute;
-    left: 146px;
-    top: 23px;
-  }
+.content {
+  max-width: 660px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
-// Header styes END //////////////////////////////
-
-body.index-small {
-
-  h4 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-left: -50px;
+.resources-parent {
+  display:flex;
+  justify-content: flex-end;
+  width:80%;
+  > * { //direct descendents
+    padding:10px;
   }
-
-  .resources-parent {
-    display:flex;
-    justify-content: flex-end;
-    width:80%;
-    > * { //direct descendents
-      padding:10px;
-    }
-    .resources-img {
-      width:100%;
-    }
+  .resources-img {
+    width:100%;
   }
-
 }
