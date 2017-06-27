@@ -17,6 +17,13 @@ body {
 }
 h2 {
   text-align: center;
+  color:#b3daee;
+  font-size: 24px;
+  font-family: georgia;
+}
+h4 {
+  font-size: 30px;
+  font-family: georgia;
 }
 // Top level styes END //////////////////////////////
 
@@ -38,9 +45,7 @@ h2 {
   display:flex;
   justify-content: flex-end;
   width:80%;
-  > * { //direct descendents
-    padding:10px;
-  }
+
   .resources-img {
     width:100%;
   }
