@@ -43,23 +43,29 @@ h4 {
   margin: auto;
   display: flex;
   justify-content: space-around;
+  @media (max-width: 727px) {
+    flex-wrap: wrap;
+  }
   > * {
     padding:40px 30px;
   }
 }
 .resource-list {
-  width:240px;
+  min-width:240px;
   h4 {
     border-bottom:1px solid #2491cd;
     padding-bottom: 6px;
     margin-bottom: 4px;
   }
   li {
-    padding-left: 1rem;
-    text-indent: -.7rem;
-    &:nth-child(n+2):before {
-      content: "• ";
-      color: #2491cd; 
+
+    &:nth-child(n+2) {
+      padding-left: 1rem;
+      text-indent: -.7rem;
+      &:before {
+        content: "• ";
+        color: #2491cd;
+      }
     }
   }
 }
