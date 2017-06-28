@@ -18,15 +18,16 @@
 %label use tobacco.
 
 %br
-%label Contact me using
+%label Deliver my quote with
 
-%select{:tabindex => "1"}
+%select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
   %option{:value => "1"} email
   %option{:value => "2"} text
   %option{:value => "3"} voice
 
 %br
-%input.email{:name => "email", :placeholder => "email@yours.com", :tabindex => "1", :type => "text"}/
+%input.contact-type.email{ :placeholder => "email@yours.com", :tabindex => "1", :type => "text"}/
+%input.contact-type.telephone.hidden{ :placeholder => "202-222-2222", :tabindex => "1", :type => "tel"}/
 %br
 
 %input.button.next{:tabindex => "1", :type => "submit", :value => "Next"}/

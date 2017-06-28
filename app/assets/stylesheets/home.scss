@@ -47,6 +47,9 @@ h4 {
 .strikethrough {
   text-decoration: line-through;
 }
+.hidden {
+  display: none;
+}
 .button {
   @extend %button
 }

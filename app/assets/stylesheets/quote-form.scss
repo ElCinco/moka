@@ -33,7 +33,7 @@
   label {
     font-size: 16px;
     font-weight: 300;
-    line-height: 2;
+    line-height: 2.5;
     .display-ampersand {
       color:rgba(0,0,0,.3);
     }
@@ -59,7 +59,7 @@
       color: rgba(255,255,255,.6);
       font-style: italic;
     }
-    &.email {
+    &.contact-type {
       width:100%;
       background:rgba(215,242,255,.8);
       padding:12px;
@@ -67,9 +67,9 @@
       border:none;
       border-radius: 4px;
       margin: 6px 0;
+      font-size: .9rem;
       &::placeholder {
         color: #074f73;
-        font-size: .9rem;
       }
     }
   }
