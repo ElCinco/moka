@@ -7,9 +7,9 @@ function ContactMethod(selectedIndex) {
     $('input.telephone').removeClass('hidden')
   }
 }
-function setFormHeight() {
-  formHeight = $('.quick-form').outerHeight();
+function setFormHeight(formHeight) {
   $('.quote-wrapper form').css('height', formHeight);
+  console.log(formHeight)
 }
 
 $(document).ready(function(){
@@ -68,5 +68,6 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-  setFormHeight();
+  formHeight = $('.quick-form').outerHeight();
+  setFormHeight(formHeight);
 });
