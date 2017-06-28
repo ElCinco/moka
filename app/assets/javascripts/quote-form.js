@@ -7,18 +7,20 @@ function ContactMethod(selectedIndex) {
     $('input.telephone').removeClass('hidden')
   }
 }
+function setFormHeight() {
+  formHeight = $('.quick-form').outerHeight();
+  $('.quote-wrapper form').css('height', formHeight);
+}
 
 $(document).ready(function(){
 
 
-
   // set header
   QuoteHeaderText = ''
-  var formHeight = $('.quick-form').outerHeight();
 
-  function setFormHeight(formHeight) {
-    $('.quote-wrapper form').css('height', formHeight);
-  }
+
+
+
   function initTabbing() {
     if ($('.quick-form').css('margin-top') === '0px' ) {
       $('.detailed-form input').each(function (index, value) {
@@ -57,9 +59,12 @@ $(document).ready(function(){
     initTabbing();
   });
 
-  setFormHeight(formHeight);
   $('select').customSelect();// reset select box styles
   $(".telephone").mask("(999) 999-9999");
 
 
+});
+
+$(window).load(function(){
+  setFormHeight();
 });
