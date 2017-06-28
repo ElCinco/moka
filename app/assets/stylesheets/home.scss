@@ -53,6 +53,9 @@ h4 {
 .button {
   @extend %button
 }
+.fake-period {
+  margin-left: -4px;
+}
 
 .content {
   margin: auto;

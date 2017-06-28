@@ -51,7 +51,7 @@
     //font-size: 1em;
     text-align: center;
     width: 70px;
-    color: #2491cd;
+    color: rgba(255,255,255,.7);
     &.button {
       @extend %button
     }
@@ -61,15 +61,16 @@
     }
     &.contact-type {
       width:100%;
-      background:rgba(215,242,255,.8);
       padding:12px;
-      color: #074f73;
+      //color: #074f73;
       border:none;
+      border:1px solid rgba(215,242,255,.6);
       border-radius: 4px;
       margin: 6px 0;
       font-size: .9rem;
       &::placeholder {
-        color: #074f73;
+        //color: #074f73;
+        font-style: normal;
       }
     }
   }

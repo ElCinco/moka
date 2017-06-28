@@ -10,7 +10,9 @@
 %label I live in
 = select_tag :state, options_for_select(us_states)
 
-%label . I
+%label
+  %span.fake-period .
+  I
 %select{:tabindex => "1", :name => "tobacco-use"}
   %option{:value => "1"} don't
   %option{:value => "2"} do
@@ -18,7 +20,7 @@
 %label use tobacco.
 
 %br
-%label Deliver my quote with
+%label Deliver my quote using
 
 %select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
   %option{:value => "1"} email
@@ -27,7 +29,7 @@
 
 %br
 %input.contact-type.email{ :placeholder => "email@yours.com", :tabindex => "1", :type => "text"}/
-%input.contact-type.telephone.hidden{ :placeholder => "202-222-2222", :tabindex => "1", :type => "tel"}/
+%input.contact-type.telephone.hidden{ :placeholder => "(202) 222-2222", :tabindex => "1", :type => "tel"}/
 %br
 
 %input.button.next{:tabindex => "1", :type => "submit", :value => "Next"}/
