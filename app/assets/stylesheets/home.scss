@@ -11,7 +11,7 @@ body, html {
   }
 }
 body {
-  font-family: -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Soleto', -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
   line-height: 1.7;
   max-width: 1280px;
@@ -20,24 +20,25 @@ body {
   color:#fff;
   background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url('legos.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  //background-repeat: no-repeat;
   background-position: center;
 
 }
 a {
   color:#fff;
 }
+h2, h4 {
+  font-family: 'calluna';
+}
 h2 {
   text-align: center;
   color:rgba(177,228,255,.7);
-  font-size: 24px;
-  font-family: georgia;
+  font-size: 28px;
   margin: 48px 0;
   line-height: 1;
 }
 h4 {
   font-size: 30px;
-  font-family: georgia;
   line-height: 1;
 }
 // Top level styes END //////////////////////////////

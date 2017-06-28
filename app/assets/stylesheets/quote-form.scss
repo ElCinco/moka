@@ -4,7 +4,8 @@
 .quote-wrapper {
   background: rgba(5,47,68,.6);
   margin: 0px 30px 30px 30px;
-  max-width: 420px;
+  min-width: 420px;
+  max-width: 440px;
   position: relative;
   &:before {
     content: " ";
@@ -15,6 +16,9 @@
     right: 10px;
     bottom: 10px;
     border: 1px solid #2491cd;
+  }
+  h4 {
+    margin-bottom: 1rem;
   }
   form {
     transition: height .7s;
@@ -29,6 +33,7 @@
   label {
     font-size: 16px;
     font-weight: 300;
+    line-height: 2;
     .display-ampersand {
       color:rgba(0,0,0,.3);
     }
@@ -61,8 +66,10 @@
       color: #074f73;
       border:none;
       border-radius: 4px;
+      margin: 6px 0;
       &::placeholder {
         color: #074f73;
+        font-size: .9rem;
       }
     }
   }
