@@ -9,7 +9,7 @@
   @media (min-width: 460px) {
     min-width: 420px;
     max-width: 440px;
-    margin: 0px 30px 30px 30px;
+    margin: 0px 30px 0px 30px;
 
   }
   &:before {
@@ -24,6 +24,8 @@
   }
   h4 {
     margin-bottom: 1rem;
+    width:80%;
+    height:80px;
   }
   form {
     height:190px;
@@ -36,11 +38,41 @@
   .quick-form {
     transition: margin .4s ease-in-out;
   }
+  .second-form-message {
+      opacity: .6;
+      font-style: italic;
+      display: none;
+      width:85%;
+      //height:80px;
+      margin-bottom: 1rem;
+  }
   .input-sentance {
 
     @media (max-width: 420px) {
       display:block;
     }
+  }
+  .alt-button {
+    height: 34px;
+    background: rgba(120,120,120,.4);
+    display: inline-block;
+    width: 120px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 2.1;
+    color:rgba(255,255,255,.6);
+    &:hover {
+      background: rgba(120,120,120,.8);
+      color:rgba(255,255,255,.99);
+    }
+    &:active {
+      background: rgb(120,120,120);
+    }
+    &:focus {
+      outline-color: rgb(120,120,120)
+    }
+
   }
   fieldset {
     display: inline-block;
@@ -58,23 +90,25 @@
     cursor: text;
   }
   input, select {
-    padding:10px;
+    //padding:10px;
   }
 
   input {
     border:none;
     background:transparent;
-    border-bottom:1px solid rgba(255,255,255,1);
+    border-bottom:1px solid rgba(255,255,255,.6);
     //font-size: 1em;
     text-align: center;
-    width: 70px;
+    width: 140px;
     color: rgba(255,255,255,.7);
+    font-size: .9rem;
+
     &.button {
       @extend %button
     }
     &::placeholder {
       color: rgba(255,255,255,.6);
-      font-style: italic;
+      font-size: 1rem;
     }
     &.contact-type {
       width:100%;

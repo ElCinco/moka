@@ -8,7 +8,7 @@ function ContactMethod(selectedIndex) {
   }
 }
 function setFormHeight(formHeight) {
-  $('.quote-wrapper form').css('height', formHeight);
+  $('.quote-wrapper form').css('height', (formHeight + 3));
   console.log(formHeight)
 }
 
@@ -46,8 +46,10 @@ $(document).ready(function(){
     $('.quick-form').css('margin-top', formHeightOffset);
     formHeight = $('.detailed-form').outerHeight();
     setFormHeight(formHeight);
-    QuoteHeaderText = 'Continue for a more precise quote'
-    $('.quote-wrapper h4').html(QuoteHeaderText);
+    //QuoteHeaderText = 'tbd'
+    //$('.quote-wrapper h4').html(QuoteHeaderText);
+    $('.quote-wrapper h4').hide();
+    $('.quote-wrapper > p').fadeIn();
     initTabbing();
   });
 
@@ -55,8 +57,10 @@ $(document).ready(function(){
     $('.quick-form').css('margin-top', 0);
     formHeight = $('.quick-form').outerHeight();
     setFormHeight(formHeight)
-    QuoteHeaderText = 'Get a quick quote'
-    $('.quote-wrapper h4').html(QuoteHeaderText);
+    //QuoteHeaderText = 'Start protecting your legacy'
+    //$('.quote-wrapper h4').html(QuoteHeaderText);
+    $('.quote-wrapper h4').fadeIn();
+    $('.quote-wrapper > p').hide();
     initTabbing();
   });
 

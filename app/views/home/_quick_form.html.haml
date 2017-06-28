@@ -8,7 +8,7 @@
 %br
 
 %label I live in
-= select_tag :state, options_for_select(us_states)
+= select_tag :state, options_for_select(us_states, "VA")
 %span.fake-period .
 
 %span.input-sentance
@@ -33,7 +33,6 @@
 %input.contact-type.telephone.hidden{ :placeholder => "(202) 222-2222", :tabindex => "1", :type => "tel", :name => "telephone"}
 %br
 
-%input.button.next{:tabindex => "1", :type => "submit", :value => "Next"}/
+%input.button{:tabindex => "1", :type => "submit", :value => "Start Now"}/
 
-%span or
-%span.button-next{:tabindex => "1"} Detailed Quote
+%span.button-next.alt-button{:tabindex => "1"} Keep Going

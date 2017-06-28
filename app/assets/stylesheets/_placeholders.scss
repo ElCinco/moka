@@ -5,11 +5,11 @@
   background: rgba(36,145,205,0.7);
   display: inline-block;
   width: 120px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-size: 12px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-size: .9em;
   font-weight: bold;
-  letter-spacing: 2px;
+  //letter-spacing: 2px;
   border: none;
   color: #ffffff;
   font-style: normal;
@@ -17,6 +17,7 @@
   margin-top: 16px;
   padding:initial;
   text-align: center;
+  margin-right: 8px;
   &:hover {
     background: rgba(36,145,205,1);
   }
@@ -26,7 +27,7 @@
   &:focus {
     background: rgba(36,145,205,.5);
     outline: none;
-    border: 3px solid rgba(36,145,205, 1)
+  //  border: 3px solid rgba(36,145,205, 1)
   }
 }
 // standard button styes END //////////////////////////////

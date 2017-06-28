@@ -1,3 +1,7 @@
+%label My name is
+%input{:name => "name", :placeholder => "Sam", :tabindex => "-1", :type => "text"}
+%br
+
 %label I weigh
 %select{:tabindex => "-1", :name => "weightRange"}
   %option{:value => "0"} > 125
@@ -11,18 +15,21 @@
 
 
 
-%label lbs and I'm
+%label lbs & I'm
+%select{:tabindex => "-1", :name => "height"}
+  %option{:value => "0"} 5'11"
+  %option{:value => "1", :selected => "selected"} 6'0"
+  %option{:value => "2"} divorced
+%span tall.
+%br
+
+%label I'm
 %select{:tabindex => "-1", :name => "relationshipStatus"}
   %option{:value => "0"} single
   %option{:value => "1", :selected => "selected"} married
   %option{:value => "2"} divorced
-%span.fake-period .
-%br
 
-%label My name is
-%input{:name => "name", :placeholder => "name", :tabindex => "-1", :type => "text"}
-
-%label I have
+%label & have
 =select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
 %label kids.
 %br
@@ -61,5 +68,5 @@
 %label have a policy.
 %br
 
-%span.button-prev{:tabindex => "-1"} Back
-%input.button{:tabindex => "-1", :type => "submit", :value => "Submit"}
+%input.button{:tabindex => "-1", :type => "submit", :value => "Start Now"}
+%span.button-prev.alt-button{:tabindex => "-1"} Go Back
