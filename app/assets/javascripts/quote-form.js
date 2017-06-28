@@ -23,7 +23,6 @@ $(document).ready(function(){
 
   function initTabbing() {
 
-    /* PUTTING THIS ON PAUSE till the form markup settles
     if ($('.quick-form').css('margin-top') === '0px' ) {
       $('.detailed-form input').each(function (index, value) {
         $(this).attr('tabindex','1')
@@ -39,7 +38,6 @@ $(document).ready(function(){
         $(this).attr('tabindex','1')
       });
     }
-    */
   }
 
   $('.button-next').click(function(){
@@ -48,7 +46,7 @@ $(document).ready(function(){
     $('.quick-form').css('margin-top', formHeightOffset);
     formHeight = $('.detailed-form').outerHeight();
     setFormHeight(formHeight);
-    QuoteHeaderText = 'Tell us more for a detailed quote'
+    QuoteHeaderText = 'Continue for a more precise quote'
     $('.quote-wrapper h4').html(QuoteHeaderText);
     initTabbing();
   });

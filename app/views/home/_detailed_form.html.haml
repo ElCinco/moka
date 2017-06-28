@@ -1,20 +1,36 @@
 %label I weigh
-%input{:name => "weight", :placeholder => "160lbs", :tabindex => "-1", :type => "text"}
+%select{:tabindex => "-1", :name => "weightRange"}
+  %option{:value => "0"} > 125
+  %option{:value => "1"} 125-150
+  %option{:value => "2", :selected => "selected"} 150-175
+  %option{:value => "3"} 175-200
+  %option{:value => "4"} 200-250
+  %option{:value => "5"} 250-300
+  %option{:value => "6"} 300+
 
-%label and I'm
-%input{:name => "relationshipStatus", :placeholder => "single", :tabindex => "-1", :type => "text"}
+
+
+
+%label lbs and I'm
+%select{:tabindex => "-1", :name => "relationshipStatus"}
+  %option{:value => "0"} single
+  %option{:value => "1", :selected => "selected"} married
+  %option{:value => "2"} divorced
+%span.fake-period .
+%br
 
 %label My name is
 %input{:name => "name", :placeholder => "name", :tabindex => "-1", :type => "text"}
 
-%label phone number
-%input{:name => "telephone", :placeholder => "555-555-5555", :tabindex => "-1", :type => "text"}
-
-%label kids, i have
+%label I have
 %input{:name => "kids", :placeholder => "10", :tabindex => "-1", :type => "text"}
+%label kids.
+%br
 
 %label My income is between
 %input{:name => "incomeRange", :placeholder => "0-0", :tabindex => "-1", :type => "text"}
+%span.fake-period .
+%br
 
 %label My overall health is
 %input{:name => "health", :placeholder => "america", :tabindex => "-1", :type => "text"}
@@ -23,6 +39,7 @@
 %input{:name => "policyStatus", :placeholder => "do not", :tabindex => "-1", :type => "text"}
 
 %label have a policy.
+%br
 
 %span.button-prev{:tabindex => "-1"} Back
 %input.button{:tabindex => "-1", :type => "submit", :value => "Submit"}
