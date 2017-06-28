@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('select').customSelect();
+
   QuoteHeaderText = ''
   var formHeight = $('.quick-form').outerHeight();
 

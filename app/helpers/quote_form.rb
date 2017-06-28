@@ -1,4 +1,4 @@
-module HomeHelper
+module QuoteFormHelper
   def us_states
     [
       ['Alabama', 'AL'],

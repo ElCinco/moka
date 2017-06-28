@@ -1,10 +1,13 @@
 @import 'placeholders.scss';
 
 // Top level styes START //////////////////////////////
+body, html {
+  height:100%;
+}
 * {
   box-sizing: border-box;
   &:focus {
-    outline-color: rgba(152,187,127,.8);
+    outline-color: #2491cd;
   }
 }
 body {
@@ -15,14 +18,18 @@ body {
   margin: auto;
   position:relative;
   color:#fff;
-  background:#555;
+  background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url('legos.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 a {
   color:#fff;
 }
 h2 {
   text-align: center;
-  color:#b3daee;
+  color:rgba(177,228,255,.7);
   font-size: 24px;
   font-family: georgia;
   margin: 48px 0;
@@ -45,7 +52,7 @@ h4 {
 
 .content {
   margin: auto;
-  max-width: 1200px; 
+  max-width: 1000px;
   display: flex;
   justify-content: space-around;
   @media (max-width: 727px) {
