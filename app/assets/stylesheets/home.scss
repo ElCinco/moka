@@ -37,8 +37,11 @@ h2 {
   text-align: center;
   color:rgba(177,228,255,.7);
   font-size: 28px;
-  margin: 48px 0;
+  margin: 48px auto;
   line-height: 1;
+  @media (max-width: 460px) {
+    width: 330px;
+  }
 }
 h4 {
   font-size: 30px;
@@ -65,9 +68,9 @@ h4 {
   max-width: 1000px;
   display: flex;
   justify-content: space-around;
-  @media (max-width: 727px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
+
+
   > * {
     padding:45px 30px;
   }
