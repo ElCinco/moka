@@ -18,11 +18,20 @@ body {
   margin: auto;
   position:relative;
   color:#fff;
-  background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url('legos.jpg');
+  background-color:#333;
+}
+.img-bg {
+  opacity:0;
+  height:100%;
+  width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-1;
   background-size: cover;
-  //background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url('legos.jpg');
   background-position: center;
-
+  transition: opacity 3.5s;
 }
 input {
   font-family: 'Soleto', -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -31,7 +40,7 @@ a {
   color:#fff;
 }
 h2, h4 {
-  font-family: 'calluna';
+  font-family: 'freight';
 }
 h2 {
   text-align: center;
@@ -55,6 +64,9 @@ h4 {
 }
 .hidden {
   display: none;
+}
+.opaque {
+  opacity: 1;
 }
 .button {
   @extend %button
