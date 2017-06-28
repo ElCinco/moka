@@ -22,6 +22,8 @@ $(document).ready(function(){
 
 
   function initTabbing() {
+
+    /* PUTTING THIS ON PAUSE till the form markup settles
     if ($('.quick-form').css('margin-top') === '0px' ) {
       $('.detailed-form input').each(function (index, value) {
         $(this).attr('tabindex','1')
@@ -37,6 +39,7 @@ $(document).ready(function(){
         $(this).attr('tabindex','1')
       });
     }
+    */
   }
 
   $('.button-next').click(function(){
@@ -60,6 +63,7 @@ $(document).ready(function(){
   });
 
   $('select').customSelect();// reset select box styles
+  //$('.customSelect').attr('tabindex', 1);
   $(".telephone").mask("(999) 999-9999");
 
 
