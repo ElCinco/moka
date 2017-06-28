@@ -23,21 +23,40 @@
 %input{:name => "name", :placeholder => "name", :tabindex => "-1", :type => "text"}
 
 %label I have
-%input{:name => "kids", :placeholder => "10", :tabindex => "-1", :type => "text"}
+=select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
 %label kids.
 %br
 
 %label My income is between
-%input{:name => "incomeRange", :placeholder => "0-0", :tabindex => "-1", :type => "text"}
+%select{:tabindex => "-1", :name => "incomeRange"}
+  %option{:value => "0"} > 25k
+  %option{:value => "1"} 25-50k
+  %option{:value => "2", :selected => "selected"} 50-75k
+  %option{:value => "3"} 75-100k
+  %option{:value => "4"} 100-125k
+  %option{:value => "5"} 125-200k
+  %option{:value => "6"} 200k+
 %span.fake-period .
 %br
 
-%label My overall health is
-%input{:name => "health", :placeholder => "america", :tabindex => "-1", :type => "text"}
+%span My overall health is
+= field_set_tag do
+  =radio_button_tag 'health', 'poor'
+  =label_tag 'poor'
+  =radio_button_tag 'health', 'decent'
+  =label_tag 'decent'
+  =radio_button_tag 'health', 'good', true
+  =label_tag 'good'
+  =radio_button_tag 'health', 'great'
+  =label_tag 'great'
+  =radio_button_tag 'health', 'excellent'
+  =label_tag 'excellent'
 
 %br
 %label I currently
-%input{:name => "policyStatus", :placeholder => "do not", :tabindex => "-1", :type => "text"}
+%select{:tabindex => "-1", :name => "policyStatus"}
+  %option{:value => "0"} do
+  %option{:value => "1", :selected => "selected"} don't
 
 %label have a policy.
 %br
