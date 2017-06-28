@@ -3,10 +3,14 @@
 
 .quote-wrapper {
   background: rgba(5,47,68,.6);
-  margin: 0px 30px 30px 30px;
-  min-width: 420px;
-  max-width: 440px;
   position: relative;
+  //margin: auto;
+  @media (min-width: 460px) {
+    min-width: 420px;
+    max-width: 440px;
+    margin: 0px 30px 30px 30px;
+
+  }
   &:before {
     content: " ";
     position: absolute;
@@ -21,7 +25,7 @@
     margin-bottom: 1rem;
   }
   form {
-    height:227px;
+    height:190px;
     transition: height .7s;
     overflow: hidden;
     > div {
@@ -30,6 +34,12 @@
   }
   .quick-form {
     transition: margin .7s;
+  }
+  .input-sentance {
+
+    @media (max-width: 420px) {
+      display:block;
+    }
   }
   label {
     font-size: 16px;

@@ -9,23 +9,24 @@
 
 %label I live in
 = select_tag :state, options_for_select(us_states)
+%span.fake-period .
 
-%label
-  %span.fake-period .
-  I
-%select{:tabindex => "1", :name => "tobacco-use"}
-  %option{:value => "1"} don't
-  %option{:value => "2"} do
+%span.input-sentance
+  %label
+    I
+  %select{:tabindex => "1", :name => "tobacco-use"}
+    %option{:value => "1"} don't
+    %option{:value => "2"} do
 
-%label use tobacco.
+  %label use tobacco.
 
-%br
-%label Deliver my quote using
+%span.input-sentance
+  %label Deliver my quote using
 
-%select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
-  %option{:value => "1"} email
-  %option{:value => "2"} text
-  %option{:value => "3"} voice
+  %select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
+    %option{:value => "1"} email
+    %option{:value => "2"} text
+    %option{:value => "3"} voice
 
 %br
 %input.contact-type.email{ :placeholder => "email@yours.com", :tabindex => "1", :type => "text"}/
