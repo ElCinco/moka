@@ -15,14 +15,42 @@ $(document).ready(function(){
 
 
   $('.quick-form input[type="radio"] + label').click(function(){
-    selectedIndex = $(this).index()
-    ContactMethod(selectedIndex)
+    selectedIndex = $(this).index();
+    ContactMethod(selectedIndex);
   });
 
 
-  $('.detailed-form input[type="radio"] + label').click(function(){
+  starLabel = $('.detailed-form input[type="radio"] + label')
+  starLabelActive = $('.detailed-form input[type="radio"]:checked + label')
+  youngerSiblings = starLabelActive.prevAll(starLabel);
+  $(youngerSiblings).addClass('star-active');
+  function starLabelIn() {
+    youngerSiblings = $(this).prevAll(starLabel);
+    $(youngerSiblings).addClass('hover')
+  };
+  function starLabelOut() {
+    youngerSiblings = $(this).prevAll(starLabel);
+    $(youngerSiblings).removeClass('hover')
+  };
+  function setHealthText(health) {
+    $('.health-title').html(health);
+  };
+  function colorStars(youngerSiblings) {
+    $(starLabel).removeClass('star-active')
+    youngerSiblings.each(function (){
+      $(this).addClass('star-active')
+    });
+  };
+
+
+  $(starLabel).hover( starLabelIn, starLabelOut )
+
+  $(starLabel).click(function(){
     health = $(this).text();
-    $('.health-title').html(health)
+    setHealthText(health);
+
+    youngerSiblings = $(this).prevAll(starLabel);
+    colorStars(youngerSiblings);
   });
 
   function initTabbing() {

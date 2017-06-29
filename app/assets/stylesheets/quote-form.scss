@@ -16,9 +16,9 @@
 
   }
   .health-title {
-    font-size: .8em;
-    opacity: .5;
-    font-style: italic;
+    //font-size: .8em;
+    //opacity: .5;
+    //font-style: italic;
   }
   &:before {
     content: " ";
@@ -72,10 +72,22 @@
         background-size: contain;
         text-indent: -3000em;
         overflow: hidden;
+        &.star-active {
+          background:asset_url('star-selected.png') no-repeat center;
+          background-size: contain;
+          opacity: .75;
+        }
+        &:hover, &.hover {
+          opacity:1;
+        }
       }
       &:checked + label {
         background:asset_url('star-selected.png') no-repeat center;
         background-size: contain;
+        opacity: .75;
+        &:hover, &.hover {
+          opacity:1;
+        }
       }
     }
   }
