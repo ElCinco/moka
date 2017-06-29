@@ -1,5 +1,5 @@
 =label_tag "name", "My name is"
-%input{:name => "name", :placeholder => "Sam", :tabindex => "-1", :type => "text"}
+%input{:name => "name", :placeholder => "Sam Smith", :tabindex => "-1", :type => "text"}
 %br
 
 =label_tag "weight", "I weigh"
@@ -33,7 +33,7 @@
 %span kids.
 %br
 
-=label_tag "incomeRange", "My income is between"
+=label_tag "incomeRange", "My income is"
 %select{:tabindex => "-1", :name => "incomeRange"}
   %option{:value => "0"} > 25k
   %option{:value => "1"} 25-50k
@@ -48,15 +48,16 @@
 %span My overall health is
 = field_set_tag do
   =radio_button_tag 'health', 'poor'
-  =label_tag 'health_poor'
+  =label_tag 'health_poor', 'poor'
   =radio_button_tag 'health', 'decent'
-  =label_tag 'health_decent'
+  =label_tag 'health_decent', 'decent'
   =radio_button_tag 'health', 'good', true
-  =label_tag 'health_good'
+  =label_tag 'health_good', 'good'
   =radio_button_tag 'health', 'great'
-  =label_tag 'health_great'
+  =label_tag 'health_great', 'great'
   =radio_button_tag 'health', 'excellent'
-  =label_tag 'health_excellent'
+  =label_tag 'health_excellent', 'excellent'
+%span.health-title good
 
 %br
 =label_tag "policyStatus", "I currently"

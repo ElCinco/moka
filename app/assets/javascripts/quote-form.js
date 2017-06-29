@@ -9,17 +9,15 @@ function ContactMethod(selectedIndex) {
 }
 function setFormHeight(formHeight) {
   $('.quote-wrapper form').css('height', (formHeight + 3));
-  console.log(formHeight)
 }
 
 $(document).ready(function(){
 
 
-  // set header
-  QuoteHeaderText = ''
-
-
-
+  $('input[type="radio"] + label').click(function(){
+    health = $(this).text();
+    $('.health-title').html(health)
+  });
 
   function initTabbing() {
 
@@ -50,7 +48,7 @@ $(document).ready(function(){
     //$('.quote-wrapper h4').html(QuoteHeaderText);
     $('.quote-wrapper h4').hide();
     $('.quote-wrapper > p').fadeIn();
-    initTabbing();
+    //initTabbing();
   });
 
   $('.button-prev').click(function(){
@@ -61,7 +59,7 @@ $(document).ready(function(){
     //$('.quote-wrapper h4').html(QuoteHeaderText);
     $('.quote-wrapper h4').fadeIn();
     $('.quote-wrapper > p').hide();
-    initTabbing();
+    //initTabbing();
   });
 
   $('select').customSelect();// reset select box styles

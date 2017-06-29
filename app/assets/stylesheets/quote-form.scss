@@ -5,12 +5,18 @@
 .quote-wrapper {
   background: rgba(5,47,68,.6);
   position: relative;
+  overflow:hidden;
   //margin: auto;
   @media (min-width: 460px) {
     min-width: 420px;
     max-width: 440px;
     margin: 0px 30px 0px 30px;
 
+  }
+  .health-title {
+    font-size: .8em;
+    opacity: .5;
+    font-style: italic;
   }
   &:before {
     content: " ";
@@ -36,12 +42,11 @@
     height:190px;
     transition: height .5s ease-in;
     overflow: hidden;
-    > div {
-      margin-bottom: 120px;
-    }
+
   }
   .quick-form {
     transition: margin .4s ease-in-out;
+    margin-bottom: 120px;
   }
 
   .input-sentance {
@@ -52,7 +57,7 @@
   }
   .alt-button {
     height: 34px;
-    background: rgba(120,120,120,.4);
+    background-color: rgba(120,120,120,.4);
     display: inline-block;
     width: 120px;
     border-radius: 3px;
@@ -60,12 +65,13 @@
     text-align: center;
     line-height: 2.1;
     color:rgba(255,255,255,.6);
+    transition: background-color .2s ease-in;
     &:hover {
-      background: rgba(120,120,120,.8);
+      background-color: rgba(120,120,120,.8);
       color:rgba(255,255,255,.99);
     }
     &:active {
-      background: rgb(120,120,120);
+      background: rgba(120,120,120,.5);
     }
     &:focus {
       outline-color: rgb(120,120,120)
@@ -136,6 +142,10 @@
         background-size: contain;
         text-indent: -3000em;
         overflow: hidden;
+        transition: opacity .2s ease-in;
+        &:hover {
+          opacity:1;
+        }
       }
       &:checked + label {
         background:asset_url('star-selected.png') no-repeat center;
