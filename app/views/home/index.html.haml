@@ -9,8 +9,8 @@
     %li
       %h4 Life Insurance Answers
     %li
-      %a.strikethrough{:href => ""} Chat with a live agent
+      =link_to 'Chat with a live agent', '#', :class => 'strikethrough'
     %li
-      %a.strikethrough{:href => "/faqs#why-life-insurance"} Why life insurance at all?
+      =link_to 'Why life insurance at all?', '#', :class => 'strikethrough'
     %li
-      %a{:href => "/faqs"} FAQs
+      =link_to 'FAQs', home_faqs_path
