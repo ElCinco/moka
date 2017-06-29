@@ -23,9 +23,14 @@
     border: 1px solid #2491cd;
   }
   h4 {
-    margin-bottom: 1rem;
-    width:80%;
-    height:80px;
+    padding-bottom: 18px; // this padding number is keeping the form from jumping when you switch form modes
+  }
+  .second-form-message {
+      opacity: .6;
+      font-style: italic;
+      display: none;
+      width:85%;
+
   }
   form {
     height:190px;
@@ -38,14 +43,7 @@
   .quick-form {
     transition: margin .4s ease-in-out;
   }
-  .second-form-message {
-      opacity: .6;
-      font-style: italic;
-      display: none;
-      width:85%;
-      //height:80px;
-      margin-bottom: 1rem;
-  }
+
   .input-sentance {
 
     @media (max-width: 420px) {
