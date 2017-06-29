@@ -83,30 +83,7 @@
       display:block;
     }
   }
-  .alt-button {
-    cursor: pointer;
-    height: 34px;
-    background-color: rgba(120,120,120,.4);
-    display: inline-block;
-    width: 120px;
-    border-radius: 3px;
-    text-transform: capitalize;
-    text-align: center;
-    line-height: 2.1;
-    color:rgba(255,255,255,.6);
-    transition: background-color .2s ease-in;
-    &:hover {
-      background-color: rgba(120,120,120,.8);
-      color:rgba(255,255,255,.99);
-    }
-    &:active {
-      background: rgba(120,120,120,.5);
-    }
-    &:focus {
-      outline-color: rgb(120,120,120)
-    }
-
-  }
+  
   fieldset {
     display: inline-block;
     margin-left: 6px;

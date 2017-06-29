@@ -74,6 +74,30 @@ h4 {
 .fake-period {
   margin-left: -6px;
 }
+.alt-button {
+  cursor: pointer;
+  height: 34px;
+  background-color: rgba(120,120,120,.4);
+  display: inline-block;
+  width: 120px;
+  border-radius: 3px;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 2.1;
+  color:rgba(255,255,255,.6);
+  transition: background-color .2s ease-in;
+  &:hover {
+    background-color: rgba(120,120,120,.8);
+    color:rgba(255,255,255,.99);
+  }
+  &:active {
+    background: rgba(120,120,120,.5);
+  }
+  &:focus {
+    outline-color: rgb(120,120,120)
+  }
+
+}
 
 .content {
   margin: auto;
@@ -91,19 +115,11 @@ h4 {
   min-width:240px;
   max-width: 280px;
   h4 {
-    border-bottom:1px solid #2491cd;
+    //border-bottom:1px solid #2491cd;
     padding-bottom: 6px;
     margin-bottom: 4px;
   }
   li {
 
-    &:nth-child(n+2) {
-      padding-left: 1rem;
-      text-indent: -.7rem;
-      &:before {
-        content: "• ";
-        color: #2491cd;
-      }
-    }
   }
 }
