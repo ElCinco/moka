@@ -1,27 +1,27 @@
-%label I'm a
+=label_tag "age", "I'm a"
 =select_tag "age", options_for_select(21..55, 26), :tabindex => "1"
 
-%label year old
+%span year old
 %select{:tabindex => "1", :name => "gender"}
   %option{:value => "1"} man
   %option{:value => "2"} woman
 %br
 
-%label I live in
-= select_tag :state, options_for_select(us_states, "VA")
+=label_tag "state", "I live in"
+=select_tag :state, options_for_select(us_states, "VA")
 %span.fake-period .
 
 %span.input-sentance
-  %label
+  %span
     I
   %select{:tabindex => "1", :name => "tobacco-use"}
     %option{:value => "1"} don't
     %option{:value => "2"} do
+  =label_tag "tobacco-use", "use tobacco."
 
-  %label use tobacco.
 
 %span.input-sentance
-  %label Contact me using
+  =label_tag "contact-method", "Contact me using"
 
   %select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
     %option{:value => "1"} email

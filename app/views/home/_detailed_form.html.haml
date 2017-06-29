@@ -1,8 +1,8 @@
-%label My name is
+=label_tag "name", "My name is"
 %input{:name => "name", :placeholder => "Sam", :tabindex => "-1", :type => "text"}
 %br
 
-%label I weigh
+=label_tag "weight", "I weigh"
 %select{:tabindex => "-1", :name => "weightRange"}
   %option{:value => "0"} > 125
   %option{:value => "1"} 125-150
@@ -14,8 +14,7 @@
 
 
 
-
-%label lbs & I'm
+=label_tag "height", "lbs & I'm"
 %select{:tabindex => "-1", :name => "height"}
   %option{:value => "0"} 5'11"
   %option{:value => "1", :selected => "selected"} 6'0"
@@ -23,18 +22,18 @@
 %span tall.
 %br
 
-%label I'm
+=label_tag "relationshipStatus", "I'm"
 %select{:tabindex => "-1", :name => "relationshipStatus"}
   %option{:value => "0"} single
   %option{:value => "1", :selected => "selected"} married
   %option{:value => "2"} divorced
 
-%label & have
+=label_tag "kids", "& have"
 =select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
-%label kids.
+%span kids.
 %br
 
-%label My income is between
+=label_tag "incomeRange", "My income is between"
 %select{:tabindex => "-1", :name => "incomeRange"}
   %option{:value => "0"} > 25k
   %option{:value => "1"} 25-50k
@@ -60,12 +59,12 @@
   =label_tag 'health_excellent'
 
 %br
-%label I currently
+=label_tag "policyStatus", "I currently"
 %select{:tabindex => "-1", :name => "policyStatus"}
   %option{:value => "0"} do
   %option{:value => "1", :selected => "selected"} don't
 
-%label have a policy.
+%span have a policy.
 %br
 
 %input.button{:tabindex => "-1", :type => "submit", :value => "Get Quote"}
