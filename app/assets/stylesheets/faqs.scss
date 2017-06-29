@@ -1,0 +1,13 @@
+.faqs {
+  margin: 24px auto;
+  width:70%;
+  max-width:1024px;
+  dt {
+    font-weight: bold;
+    font-size: .8em;
+  }
+  dd {
+    margin-bottom:1.5em;
+    color: rgba(255,255,255,.7)
+  }
+}
