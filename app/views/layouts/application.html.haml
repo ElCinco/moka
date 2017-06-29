@@ -19,6 +19,6 @@
     = javascript_include_tag 'application'
 
 
-  %body
+  %body{:data => {:controller => controller.controller_path, :action => controller.action_name }}
     =render '/partials/header'
     = yield

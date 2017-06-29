@@ -77,7 +77,7 @@ h4 {
 .alt-button {
   cursor: pointer;
   height: 34px;
-  background-color: rgba(120,120,120,.4);
+  background-color: rgba(0,78,116,.4);
   display: inline-block;
   width: 120px;
   border-radius: 3px;
@@ -87,14 +87,14 @@ h4 {
   color:rgba(255,255,255,.6);
   transition: background-color .2s ease-in;
   &:hover {
-    background-color: rgba(120,120,120,.8);
+    background-color: rgba(0,78,116,.8);
     color:rgba(255,255,255,.99);
   }
   &:active {
-    background: rgba(120,120,120,.5);
+    background: rgba(0,78,116,.5);
   }
   &:focus {
-    outline-color: rgb(120,120,120)
+    outline-color: rgb(0,78,116)
   }
 
 }

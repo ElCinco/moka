@@ -1,13 +1,23 @@
-.faqs {
-  margin: 24px auto;
-  padding:0 24px;
-  max-width:724px;
-  dt {
-    font-weight: bold;
-    font-size: 1em;
+body[data-action="faqs"] {
+  .faqs {
+    margin: 24px auto;
+    padding:0 24px;
+    max-width:724px;
+    dt {
+      font-weight: bold;
+      font-size: 1em;
+    }
+    dd {
+      margin-bottom:1.5em;
+      color: rgba(255,255,255,.7)
+    }
   }
-  dd {
-    margin-bottom:1.5em;
-    color: rgba(255,255,255,.7)
+  .quote-wrapper {
+    margin:36px auto;
+    max-width:724px;
+    width:auto;
+  }
+  .input-sentance {
+    display:block;
   }
 }
