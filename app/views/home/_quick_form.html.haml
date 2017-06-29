@@ -22,7 +22,15 @@
 
 %span.input-sentance
   =label_tag "contact-method", "Contact me using"
+  = field_set_tag do
+    =radio_button_tag 'contact-method', 'email', true
+    =label_tag 'contact-method_email', 'email'
+    =radio_button_tag 'contact-method', 'text'
+    =label_tag 'contact-method_text', 'text'
+    =radio_button_tag 'contact-method', 'voice'
+    =label_tag 'contact-method_voice', 'voice'
 
+-##
   %select{:tabindex => "1", :name => "contact-method", :onChange => "ContactMethod(this.selectedIndex);"}
     %option{:value => "1"} email
     %option{:value => "2"} text

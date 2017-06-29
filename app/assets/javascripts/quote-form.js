@@ -1,5 +1,5 @@
 function ContactMethod(selectedIndex) {
-  if (selectedIndex === 0) {
+  if (selectedIndex <= 1) {
     $('.contact-type').addClass('hidden');
     $('input.email').removeClass('hidden')
   } else {
@@ -14,7 +14,13 @@ function setFormHeight(formHeight) {
 $(document).ready(function(){
 
 
-  $('input[type="radio"] + label').click(function(){
+  $('.quick-form input[type="radio"] + label').click(function(){
+    selectedIndex = $(this).index()
+    ContactMethod(selectedIndex)
+  });
+
+
+  $('.detailed-form input[type="radio"] + label').click(function(){
     health = $(this).text();
     $('.health-title').html(health)
   });

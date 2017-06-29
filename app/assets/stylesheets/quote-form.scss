@@ -47,6 +47,34 @@
   .quick-form {
     transition: margin .4s ease-in-out;
     margin-bottom: 120px;
+    input[type="radio"] {
+      & + label {
+        border: 1px solid rgba(255,255,255,0);
+        border-radius: 3px;
+        padding: 0 14px;
+        margin: 0px -6px;
+      }
+      &:checked + label {
+        border: 1px solid rgba(255,255,255,.6);
+      }
+    }
+  }
+  .detailed-form {
+    input[type="radio"] {
+      & + label {
+        width:20px;
+        height:20px;
+        margin:-1px 4px 0 0;
+        background:asset_url('star-empty.png') no-repeat center;
+        background-size: contain;
+        text-indent: -3000em;
+        overflow: hidden;
+      }
+      &:checked + label {
+        background:asset_url('star-selected.png') no-repeat center;
+        background-size: contain;
+      }
+    }
   }
 
   .input-sentance {
@@ -129,28 +157,21 @@
       }
     }
     &[type="radio"] {
-      display:none;
+      width: initial;
+      display: none;
       & + label {
         opacity:.6;
         display:inline-block;
-        width:20px;
-        height:20px;
-        margin:-1px 4px 0 0;
         vertical-align:middle;
         cursor:pointer;
-        background:asset_url('star-empty.png') no-repeat center;
-        background-size: contain;
-        text-indent: -3000em;
-        overflow: hidden;
-        transition: opacity .2s ease-in;
+        transition: all .2s ease-in;
         &:hover {
           opacity:1;
         }
       }
       &:checked + label {
-        background:asset_url('star-selected.png') no-repeat center;
-        background-size: contain;
         opacity:1;
+
       }
     }
   }
