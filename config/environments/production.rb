@@ -93,4 +93,9 @@ Rails.application.configure do
   config.middleware.use(Rack::Tracker) do
     handler :google_analytics, { tracker: 'UA-102041854-1' }
   end
+
+  config.middleware.use(Rack::Tracker) do
+    handler :facebook, { id: '151609688731241' }
+  end
+
 end
