@@ -2,7 +2,7 @@
 .empty {height:-10px}
 %button {
   height: 34px;
-  background-color: rgba(36,145,205,0.7);
+  background-color: rgba(0,201,0,0.7);
   display: inline-block;
   width: 120px;
   border-radius: 3px;
@@ -19,13 +19,13 @@
   margin-right: 8px;
   transition: background-color .2s ease-in;
   &:hover {
-    background-color: rgba(36,145,205,1);
+    background-color: rgba(0,201,0,1);
   }
   &:active {
-    background: rgba(36,145,205,.5);
+    background: rgba(0,201,0,.5);
   }
   &:focus {
-    background: rgba(36,145,205,.8);
+    background: rgba(0,201,0,.8);
     outline: none;
   //  border: 3px solid rgba(36,145,205, 1)
   }
