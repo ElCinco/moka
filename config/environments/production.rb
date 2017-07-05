@@ -91,7 +91,7 @@ Rails.application.configure do
 
   # google tracking
   config.middleware.use(Rack::Tracker) do
-    handler :google_analytics, { tracker: 'UA-102041854-1' }
+    handler :google_analytics, { tracker: 'UA-102041854-1', async: '1' }
   end
 
   #fb tracking
