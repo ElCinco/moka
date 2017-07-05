@@ -28,9 +28,56 @@ body {
   left: 0;
   z-index:-1;
   background-size: cover;
-  background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url('legos.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_1.jpg");
   background-position: center;
   transition: opacity 3.5s;
+  &.bgd- {
+    &1 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_1.jpg");
+    }
+    &2 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_2.jpg");
+    }
+    &3 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_3.jpg");
+    }
+    &4 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_4.jpg");
+    }
+    &5 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_5.jpg");
+    }
+    &6 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_6.jpg");
+    }
+    &7 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_7.jpg");
+    }
+    &8 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_8.jpg");
+    }
+    &9 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_9.jpg");
+    }
+    &10 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_10.jpg");
+    }
+    &11 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_11.jpg");
+    }
+    &12 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_12.jpg");
+    }
+    &13 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_13.jpg");
+    }
+    &14 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_14.jpg");
+    }
+    &15 {
+      background-image: linear-gradient(rgba(0,0,0,0.3) 0%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.7) 100%), asset_url("bgd_15.jpg");
+    }
+  }
 }
 input {
   font-family: 'Soleto', -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
