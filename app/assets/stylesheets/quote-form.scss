@@ -20,6 +20,31 @@
     //opacity: .5;
     //font-style: italic;
   }
+  .coverage-hover {
+    position: relative;
+    &:hover {
+      .coverage-tooltip {
+        display:block;
+      }
+    }
+  }
+  .coverage-tooltip {
+    width: 384px;
+    padding:12px;
+    background:#2491cd;
+    position: absolute;
+    top:30px;
+    left:-129px;
+    display:none;
+    z-index: 9;
+    h6 {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    p {
+      font-size: .9em;
+    }
+  }
   &:before {
     content: " ";
     position: absolute;
