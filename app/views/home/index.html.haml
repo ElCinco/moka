@@ -5,8 +5,17 @@
 .content
   =render 'quote_form'
 
-  %ul.resource-list
-    %li
-      %h4 Life Insurance Answers
-    %li
-      =link_to 'View FAQs', faqs_path, :class => 'alt-button'
+  .resource-list
+    %ul.our-process
+      %li
+        %h4 Our Process
+      %li complete the form to get a quote
+      %li Policy is delivered via email
+      %li Up to 1,000,000bin coverage
+      %li No doctor needed
+      %li Coverage in hours not weeks
+    %ul.faqs
+      %li
+        %h4 Life Insurance FAQs
+      %li
+        =link_to 'View FAQs', faqs_path, :class => 'alt-button'

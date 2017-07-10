@@ -124,7 +124,7 @@ h4 {
 .alt-button {
   cursor: pointer;
   height: 34px;
-  background-color: rgba(0,78,116,.4);
+  background-color: rgba(60,140,203,.8);
   display: inline-block;
   //width: 120px;
   padding: 0 14px;
@@ -135,14 +135,14 @@ h4 {
   color:rgba(255,255,255,.8);
   transition: background-color .2s ease-in;
   &:hover {
-    background-color: rgba(0,78,116,.8);
+    background-color: rgba(60,140,203,.99);
     color:rgba(255,255,255,.99);
   }
   &:active {
-    background: rgba(0,78,116,.5);
+    background-color: rgba(60,140,203,.5);
   }
   &:focus {
-    outline-color: rgb(0,78,116)
+    background-color: rgba(60,140,203,.99);
   }
 
 }
@@ -159,7 +159,24 @@ h4 {
     padding:45px 30px;
   }
 }
-.resource-list {
+.our-process {
+  margin: 0 0 16px 0;
+  h4 {
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  li {
+    padding-left: 1em;
+    text-indent: -.7em;
+    &:nth-child(n+2) {
+      &:before {
+        content: "• ";
+        color: #3c8ccb;
+      }
+    }
+  }
+}
+.faqs {
   min-width:240px;
   max-width: 280px;
   h4 {

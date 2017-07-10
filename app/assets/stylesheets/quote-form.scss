@@ -9,12 +9,7 @@
   position: relative;
   overflow:hidden;
   padding: 45px 30px;
-  //margin: auto;
-  @media (min-width: 460px) {
-    min-width: 420px;
-    max-width: 440px;
-
-  }
+  width: 420px;
   .health-title {
     //font-size: .8em;
     //opacity: .5;
@@ -126,7 +121,7 @@
 
   fieldset {
     display: inline-block;
-    margin:0 6px;
+    margin: 0 0px 0 6px;
   }
 
   label {
