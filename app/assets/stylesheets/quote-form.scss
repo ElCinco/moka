@@ -95,7 +95,7 @@
         &.star-active {
           background:asset_url('star-selected.png') no-repeat center;
           background-size: contain;
-          opacity: .75;
+          opacity: .85;
         }
         &:hover, &.hover {
           opacity:1;
@@ -104,7 +104,7 @@
       &:checked + label {
         background:asset_url('star-selected.png') no-repeat center;
         background-size: contain;
-        opacity: .75;
+        opacity: .85;
         &:hover, &.hover {
           opacity:1;
         }
