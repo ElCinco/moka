@@ -63,7 +63,7 @@
       font-style: italic;
       display: none;
       width:95%;
-      max-width: 500px;
+      max-width: 340px;
 
   }
   form {
@@ -119,9 +119,9 @@
 
   .input-sentance {
 
-    @media (max-width: 420px) {
+  //  @media (max-width: 420px) {
       display:block;
-    }
+  //  }
   }
 
   fieldset {

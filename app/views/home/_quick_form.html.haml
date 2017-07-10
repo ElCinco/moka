@@ -5,6 +5,8 @@
 %select{:tabindex => "1", :name => "gender"}
   %option{:value => "1"} man
   %option{:value => "2"} woman
+%span.fake-period .
+
 %br
 
 =label_tag "state", "I live in"
@@ -18,18 +20,17 @@
     %option{:value => "1"} don't
     %option{:value => "2"} do
   =label_tag "tobacco-use", "use tobacco."
-%br
 
-=label_tag "coverageAmount", "I need"
-=select_tag :coverageAmount, options_for_select([ "$250,000", "$500,000", "$750,000", "$1,000,000" ], "250,000")
-%span.coverage-hover
-  in coverage *
-  .coverage-tooltip
-    %h6 How much coverage should I get?
-    %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 ties your income.
+%span.input-sentance
+  =label_tag "coverageAmount", "I need"
+  =select_tag :coverageAmount, options_for_select([ "$250,000", "$500,000", "$750,000", "$1,000,000" ], "250,000")
+  %span.coverage-hover
+    in coverage *
+    .coverage-tooltip
+      %h6 How much coverage should I get?
+      %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 ties your income.
 
 
-%br
 
 %span.input-sentance
   =label_tag "contact-method", "Contact me using"
@@ -51,5 +52,5 @@
 %input.contact-type.telephone.hidden{ :placeholder => "(202) 222-2222", :tabindex => "1", :type => "tel", :name => "telephone"}
 
 %span.input-sentance
-  %input.button{:tabindex => "1", :type => "submit", :value => "Start Now"}/
-  %span.button-next.alt-button{:tabindex => "1"} Keep Going
+  %input.button{:tabindex => "1", :type => "submit", :value => "We'll contact you"}/
+  %span.button-next.alt-button{:tabindex => "1"} Continue for a quote
