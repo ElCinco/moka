@@ -61,13 +61,12 @@
       max-width: 340px;
 
   }
-  form {
+  .forms-wrapper {
     height:190px;
     transition: height .5s ease-in;
     overflow: hidden;
-
   }
-  .quick-form {
+  .form-1 {
     transition: margin .4s ease-in-out;
     margin-bottom: 120px;
     input[type="radio"] {
@@ -82,7 +81,7 @@
       }
     }
   }
-  .detailed-form {
+  .form-2 {
     input[type="radio"] {
       & + label {
         width:20px;

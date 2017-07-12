@@ -3,7 +3,13 @@
 %h2 The coverage you need. Made simple
 
 .content
-  =render 'quote_form'
+  .quote-wrapper#quote
+    %h4 Start protecting your legacy
+    %p.second-form-message Provide us with some more info and we'll get back to you shortly with a personalized quote
+
+    .forms-wrapper
+      =render 'form_1'
+      =render 'form_2'
 
   .resource-list
     %ul.our-process

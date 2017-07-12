@@ -8,7 +8,7 @@ function ContactMethod(selectedIndex) {
   }
 }
 function setFormHeight(formHeight) {
-  $('.quote-wrapper form').css('height', (formHeight + 3));
+  $('.forms-wrapper').css('height', (formHeight + 3));
 }
 
 $(document).ready(function(){
@@ -73,10 +73,10 @@ $(document).ready(function(){
   }
 
   $('.button-next').click(function(){
-    formHeight = $('.quick-form').outerHeight();
+    formHeight = $('.form-1').outerHeight();
     formHeightOffset = -(formHeight + 120)
-    $('.quick-form').css('margin-top', formHeightOffset);
-    formHeight = $('.detailed-form').outerHeight();
+    $('.form-1').css('margin-top', formHeightOffset);
+    formHeight = $('.form-2').outerHeight();
     setFormHeight(formHeight);
     //QuoteHeaderText = 'tbd'
     //$('.quote-wrapper h4').html(QuoteHeaderText);
@@ -86,8 +86,8 @@ $(document).ready(function(){
   });
 
   $('.button-prev').click(function(){
-    $('.quick-form').css('margin-top', 0);
-    formHeight = $('.quick-form').outerHeight();
+    $('.form-1').css('margin-top', 0);
+    formHeight = $('.form-1').outerHeight();
     setFormHeight(formHeight)
     //QuoteHeaderText = 'Start protecting your legacy'
     //$('.quote-wrapper h4').html(QuoteHeaderText);
@@ -104,6 +104,6 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-  formHeight = $('.quick-form').outerHeight();
+  formHeight = $('.form-1 form').outerHeight();
   setFormHeight(formHeight);
 });
