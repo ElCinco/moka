@@ -40,9 +40,9 @@
       = f.label 'contact-method_voice', 'voice'
 
 
-  %input.contact-type.email{ :placeholder => "email@yours.com", :tabindex => "1", :type => "text", :name => "email"}
-  %input.contact-type.telephone.hidden{ :placeholder => "(202) 222-2222", :tabindex => "1", :type => "tel", :name => "telephone"}
+  = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
+  = f.text_field :telephone, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
 
   %span.input-sentance
-    %input.button{:tabindex => "1", :type => "submit", :value => "We'll contact you"}/
+    = f.submit "We'll contact you", :class => "button"
     %span.button-next.alt-button{:tabindex => "1"} Continue for a quote
