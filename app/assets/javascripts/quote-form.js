@@ -104,6 +104,6 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-  formHeight = $('.form-1 form').outerHeight();
+  formHeight = $('.form-1').outerHeight();
   setFormHeight(formHeight);
 });
