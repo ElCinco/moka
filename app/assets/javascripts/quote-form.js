@@ -14,14 +14,14 @@ function setFormHeight(formHeight) {
 $(document).ready(function(){
 
 
-  $('.quick-form input[type="radio"] + label').click(function(){
+  $('.form-1 input[type="radio"] + label').click(function(){
     selectedIndex = $(this).index();
     ContactMethod(selectedIndex);
   });
 
 
-  starLabel = $('.detailed-form input[type="radio"] + label')
-  starLabelActive = $('.detailed-form input[type="radio"]:checked + label')
+  starLabel = $('.form-2 input[type="radio"] + label')
+  starLabelActive = $('.form-2 input[type="radio"]:checked + label')
   youngerSiblings = starLabelActive.prevAll(starLabel);
   $(youngerSiblings).addClass('star-active');
   function starLabelIn() {
@@ -38,7 +38,7 @@ $(document).ready(function(){
   function colorStars(youngerSiblings) {
     $(starLabel).removeClass('star-active')
     youngerSiblings.each(function (){
-      $(this).addClass('star-active')
+      $(this).addClass('star-active');
     });
   };
 
@@ -55,18 +55,18 @@ $(document).ready(function(){
 
   function initTabbing() {
 
-    if ($('.quick-form').css('margin-top') === '0px' ) {
-      $('.detailed-form input').each(function (index, value) {
+    if ($('.form-1').css('margin-top') === '0px' ) {
+      $('.form-2 input').each(function (index, value) {
         $(this).attr('tabindex','1')
       });
-      $('.quick-form input, .quick-form select, .detailed-form select').each(function (index, value) {
+      $('.form-1 input, .form-1 select, .form-2 select').each(function (index, value) {
         $(this).attr('tabindex','-1')
       });
     } else {
-      $('.detailed-form input, .detailed-form select').each(function (index, value) {
+      $('.form-2 input, .form-2 select').each(function (index, value) {
         $(this).attr('tabindex','-1')
       });
-      $('.quick-form input, .quick-form select').each(function (index, value) {
+      $('.form-1 input, .form-1 select').each(function (index, value) {
         $(this).attr('tabindex','1')
       });
     }
