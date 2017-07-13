@@ -21,8 +21,8 @@
     = f.label "smoker", "use tobacco."
 
   %span.input-sentance
-    = f.label "coverageAmount", "I need"
-    = ##f.select :coverageAmount, options_for_select([ "$250,000", "$500,000", "$750,000", "$1,000,000" ], "250,000")
+    = f.label "coverage_amount", "I need"
+    = f.select :coverage_amount, options_for_select([ "$250,000", "$500,000", "$750,000", "$1,000,000" ], "250,000")
     %span.coverage-hover
       in coverage *
       .coverage-tooltip
@@ -30,17 +30,15 @@
         %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 times your income.
 
 
-
   %span.input-sentance
-  -##
-    = f.label "contact-method", "Contact me using"
-    =field_set_tag do
-      = f.radio_button 'contact-method', 'email',checked:true
-      = f.label 'contact-method_email', 'email'
-      = f.radio_button 'contact-method', 'text'
-      = f.label 'contact-method_text', 'text'
-      = f.radio_button 'contact-method', 'voice'
-      = f.label 'contact-method_voice', 'voice'
+    = label_tag "contact-method", "Contact me using"
+    = field_set_tag do
+      = radio_button_tag 'contact-method', 'email',checked:true
+      = label_tag 'contact-method_email', 'email'
+      = radio_button_tag 'contact-method', 'text'
+      = label_tag 'contact-method_text', 'text'
+      = radio_button_tag 'contact-method', 'voice'
+      = label_tag 'contact-method_voice', 'voice'
 
 
   = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
