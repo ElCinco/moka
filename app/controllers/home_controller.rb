@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @customer = Customer.new
   end
 
   def about

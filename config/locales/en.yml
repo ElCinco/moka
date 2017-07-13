@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+
+en:
+  activerecord:
+    attributes:
+      customer:
+        email: "E-mail address"
+    errors:
+      models:
+        customer:
+          attributes:
+            email:
+              blank: "is required"
