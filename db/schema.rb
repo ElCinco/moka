@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170707183701) do
+ActiveRecord::Schema.define(version: 20170713170722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20170707183701) do
     t.boolean "smoker"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "coverage_amount"
+    t.string "customer_name"
+    t.integer "weight"
+    t.string "height"
+    t.integer "marriage_status"
+    t.integer "children"
+    t.string "income_range"
+    t.integer "health_rating"
+    t.boolean "currently_has_policy"
   end
 
 end
