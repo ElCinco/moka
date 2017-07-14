@@ -1,0 +1,62 @@
+=form_for @customer, url: customers_path, :html => {:class => 'form-2'} do |f|
+  =f.label "name", "My name is"
+  =f.text_field :customer_name, :placeholder => "Sam Smith"
+  %br
+
+  =f.label "weight", "I weigh"
+  =f.select :weight, options_for_select([ ">125", "125-150", "150-175", "175-200", "200-250", "250-300", "300+" ], "125-150")
+
+  =f.label "height", "lbs & I'm"
+  =f.select :weight, options_for_select(heights, "5'9\"")
+  %span tall.
+  %br
+
+  =f.label "relationshipStatus", "I'm"
+
+  %select{:tabindex => "-1", :name => "relationshipStatus"}
+    %option{:value => "0"} single
+    %option{:value => "1", :selected => "selected"} married
+    %option{:value => "2"} divorced
+
+  =label_tag "kids", "& have"
+  =select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
+  %span kids.
+  %br
+
+  =label_tag "incomeRange", "My income is"
+  %select{:tabindex => "-1", :name => "incomeRange"}
+    %option{:value => "0"} > 25k
+    %option{:value => "1"} 25-50k
+    %option{:value => "2", :selected => "selected"} 50-75k
+    %option{:value => "3"} 75-100k
+    %option{:value => "4"} 100-125k
+    %option{:value => "5"} 125-200k
+    %option{:value => "6"} 200k+
+  %span.fake-period .
+  %br
+
+  %span My overall health is
+  = field_set_tag do
+    =radio_button_tag 'health', 'poor'
+    =label_tag 'health_poor', 'poor'
+    =radio_button_tag 'health', 'decent'
+    =label_tag 'health_decent', 'decent'
+    =radio_button_tag 'health', 'good', true
+    =label_tag 'health_good', 'good'
+    =radio_button_tag 'health', 'great'
+    =label_tag 'health_great', 'great'
+    =radio_button_tag 'health', 'excellent'
+    =label_tag 'health_excellent', 'excellent'
+  %span.health-title good
+
+  %br
+  =label_tag "policyStatus", "I currently"
+  %select{:tabindex => "-1", :name => "policyStatus"}
+    %option{:value => "0"} do
+    %option{:value => "1", :selected => "selected"} don't
+
+  %span have a policy.
+  %br
+
+  %input.button{:tabindex => "-1", :type => "submit", :value => "Get a quote"}
+  %span.button-prev.alt-button{:tabindex => "-1"} Go back
