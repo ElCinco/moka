@@ -6,7 +6,7 @@
   = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
 
   =f.label :gender, "year old"
-  = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 2], ['other', 3]])
+  = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
   %span.fake-period .
   =## f.collection_select(:customer_id, Customer.all, :id, :name)
 
@@ -23,7 +23,7 @@
 
   %span.input-sentance
     = f.label "coverage_amount", "I need"
-    = f.select :coverage_amount, options_for_select([ "$250,000", "$500,000", "$750,000", "$1,000,000" ], "250,000")
+    = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
     %span.coverage-hover
       in coverage *
       .coverage-tooltip
