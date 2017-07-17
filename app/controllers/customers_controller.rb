@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
 
     @customer.save
     if @customer.save
-      flash[:notice] = "Congrats, Info is coming soon"
+      flash[:notice] = "We'll reach out shortly with your quote"
       redirect_to root_path
     else
       render 'home/index'
