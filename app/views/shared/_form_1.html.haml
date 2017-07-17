@@ -1,5 +1,7 @@
-= form_for @customer, :html => {:class => 'form-1'} do |f|
-
+= form_for @customer, url: customers_path, :html => {:class => 'form-1'} do |f|
+  - if flash[:notice]
+    .success-notice
+      = flash[:notice]
   = render 'shared/error_messages'
 
   = f.label :age, "I'm a"

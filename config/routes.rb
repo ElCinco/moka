@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/faqs', to: 'home#faqs'
   get '/about', to: 'home#about'
 
-  resources :customers, only: [:create]
+  resources :customers, only: [:create, :edit]
 
 
   root 'home#index'

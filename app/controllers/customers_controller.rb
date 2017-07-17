@@ -1,10 +1,11 @@
 class CustomersController < ApplicationController
   def create
-    @customer = Customer.new(params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy))
+    @customer = Customer.new(customer_params)
 
     @customer.save
     if @customer.save
-      redirect_to about_path
+      flash[:notice] = "Congrats, Info is coming soon"
+      redirect_to root_path
     else
       render 'home/index'
       ## render 'error_messages'
@@ -13,14 +14,17 @@ class CustomersController < ApplicationController
     end
   end
 
-  def detailedCreate
-    @customer = Customer.new(params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy))
-    @customer.save
+  def edit
+    @customer = Customer.find(params[:id])
 
-    if @customer.save
-      redirect_to faqs_path
+    if @customer.update_attributes(customer_params)
+      # Handle a successful update.
     else
-      render 'home/index'
+      # Handle a failed update.
     end
+  end
+
+  def customer_params
+    params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy)
   end
 end
