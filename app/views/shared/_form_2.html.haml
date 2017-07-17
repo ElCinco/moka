@@ -1,4 +1,7 @@
 =form_for @customer, url: customers_path, :html => {:class => 'form-2'} do |f|
+
+  = render 'shared/error_messages'
+
   =f.label "name", "My name is"
   =f.text_field :customer_name, :placeholder => "Sam Smith"
   %br

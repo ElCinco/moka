@@ -4,9 +4,11 @@ class HomeController < ApplicationController
   end
 
   def about
+    @customer = Customer.new
   end
 
   def faqs
+    @customer = Customer.new
   end
 
   def submit_contact_form
