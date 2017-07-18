@@ -3,7 +3,10 @@
 %h2 The coverage you need. Made simple
 
 .content
-  =render '/shared/form_1'
+  - if session[:current_customer_id].blank?
+    =render '/shared/form_1'
+  - else
+    =render '/shared/thanks'
 
   .resource-list
     %ul.our-process

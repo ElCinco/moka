@@ -3,7 +3,11 @@
 %h2 The coverage you need. Made simple
 
 .content
-  =render '/shared/form_2'
+  - if session[:customer_updated] == true
+    =render '/shared/thanks'
+  - else
+    =render '/shared/form_2'
+
 
   .resource-list
     %ul.our-process
@@ -22,4 +26,4 @@
       %li
         =link_to 'About moka', about_path, :class => 'alt-button'
 
-- logger.debug "custoemr id is:" + session[:current_customer_id].to_s
+- logger.debug "customer id is:" + session[:current_customer_id].to_s

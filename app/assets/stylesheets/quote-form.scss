@@ -220,12 +220,22 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rebeccapurple;
+    background: rgba(102, 51, 153, 0.5);
     z-index: 2;
     text-align: center;
     padding: 30px;
     h2 {
       margin-bottom: 6px;
     }
+  }
+}
+.success-notice {
+
+  background: rebeccapurple;
+  z-index: 2;
+  text-align: center;
+  padding: 30px;
+  h2 {
+    margin-bottom: 6px;
   }
 }

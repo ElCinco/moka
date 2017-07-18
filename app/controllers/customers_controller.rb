@@ -42,6 +42,7 @@ class CustomersController < ApplicationController
     if @customer.update_attributes(customer_params)
       flash[:success] = "We'll reach out shortly with your quote"
       redirect_to @customer
+      session[:customer_updated] = true
     else
       render '/customers/show'
     end
