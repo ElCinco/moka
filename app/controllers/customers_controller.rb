@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
         session[:current_customer_id] = @customer.id
         logger.debug "user is:" + session[:current_customer_id].to_s
 
-        flash[:notice] = "We'll reach out shortly with your quote"
+        flash[:notice] = "We'll reach out to you shortly"
         redirect_to root_path
       else
         render 'home/index'  #errors are displayed in view
@@ -38,7 +38,7 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update_attributes(customer_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "We'll reach out shortly with your quote"
       redirect_to @customer
     else
       render 'faqs'

@@ -180,7 +180,7 @@
       }
     }
 
-    &[type="text"] {
+    &[type="text"], &[type="tel"] {
       background:transparent;
     }
     &[type="submit"] {
