@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
 
 
     if params[:continue_to_next_form]
+      @customer.skip_name_validation = true
       if @customer.save
         session[:current_customer_id] = @customer.id
         @current_cust = session[:current_customer_id]
@@ -17,6 +18,7 @@ class CustomersController < ApplicationController
       end
     else
       # user clicks submit. Redirect to show the newly created record, for example.
+      @customer.skip_name_validation = true
       if @customer.save
         session[:current_customer_id] = @customer.id
         logger.debug "user is:" + session[:current_customer_id].to_s
@@ -24,7 +26,7 @@ class CustomersController < ApplicationController
         flash[:notice] = "We'll reach out to you shortly"
         redirect_to root_path
       else
-        render 'home/index'  #errors are displayed in view
+        render '/home/index'  #errors are displayed in view
       end
     end
 
@@ -41,7 +43,7 @@ class CustomersController < ApplicationController
       flash[:success] = "We'll reach out shortly with your quote"
       redirect_to @customer
     else
-      render 'faqs'
+      render '/customers/show'
     end
   end
 

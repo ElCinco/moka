@@ -2,7 +2,7 @@
   %h4 Start protecting your legacy
 
   .forms-wrapper{:data => {:id => "<%= session[:current_customer_id] %>"}}
-    = form_for @customer, url: customers_path, :html => {:class => 'form-1'} do |f|
+    = form_for @customer, :html => {:class => 'form-1'} do |f|
       - if flash[:notice]
         .success-notice
           %h2

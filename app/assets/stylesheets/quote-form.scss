@@ -108,7 +108,10 @@
       }
     }
   }
-
+  .field_with_errors {
+      display: inline-block;
+      width:100%;
+  }
   .input-sentance {
 
   //  @media (max-width: 420px) {
