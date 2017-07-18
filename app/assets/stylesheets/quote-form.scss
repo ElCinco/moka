@@ -56,7 +56,6 @@
   .second-form-message {
       opacity: .6;
       font-style: italic;
-      display: none;
       width:95%;
       max-width: 340px;
 
@@ -147,7 +146,6 @@
   input {
     border:none;
     border-radius: 0;
-    background:transparent;
     border-bottom:1px solid rgba(255,255,255,.6);
     //font-size: 1em;
     text-align: center;
@@ -180,6 +178,19 @@
       &::placeholder {
         //color: #074f73;
         font-style: normal;
+      }
+    }
+
+    &[type="text"] {
+      background:transparent;
+    }
+    &[type="submit"] {
+      border:none;
+      border-radius: 3px;
+      font-weight: bold;
+      &.alt-button, &.button {
+        width:initial;
+        padding:0 10px;
       }
     }
     &[type="radio"] {

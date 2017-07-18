@@ -1,27 +1,43 @@
 class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
-
     @customer.save
-    if @customer.save
-      flash[:notice] = "We'll reach out shortly with your quote"
-      redirect_to root_path
-    else
-      render 'home/index'
-      ## render 'error_messages'
-      ## render 'shared/error_messages'
 
+
+    if params[:continue_to_next_form]
+      if @customer.save
+        session[:current_customer_id] = @customer.id
+        @current_cust = session[:current_customer_id]
+        logger.debug "user:" + session[:current_customer_id].to_s
+        #render 'home/index'
+        redirect_to @customer
+
+      else
+        render 'home/index' #errors are displayed in view
+      end
+    else
+      # user clicks submit. Redirect to show the newly created record, for example.
+      if @customer.save
+        session[:current_customer_id] = @customer.id
+        logger.debug "user is:" + session[:current_customer_id].to_s
+
+        flash[:notice] = "We'll reach out shortly with your quote"
+        redirect_to root_path
+      else
+        render 'home/index'  #errors are displayed in view
+      end
     end
+
+
   end
 
-  def edit
+  def show
     @customer = Customer.find(params[:id])
+  end
 
-    if @customer.update_attributes(customer_params)
-      # Handle a successful update.
-    else
-      # Handle a failed update.
-    end
+  def update
+    session[:current_customer_id] = @customer.id
+    @current_cust = session[:current_customer_id]
   end
 
   def customer_params

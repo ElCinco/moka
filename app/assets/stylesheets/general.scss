@@ -151,6 +151,8 @@ dl {
   margin-left: -6px;
 }
 .alt-button {
+  font-weight: bold;
+  font-size: .9rem;
   cursor: pointer;
   height: 34px;
   background-color: rgba(60,140,203,.8);
@@ -160,7 +162,7 @@ dl {
   border-radius: 3px;
   text-transform: capitalize;
   text-align: center;
-  line-height: 2.1;
+  line-height: 2.4;
   color:rgba(255,255,255,.8);
   transition: background-color .2s ease-in;
   &:hover {

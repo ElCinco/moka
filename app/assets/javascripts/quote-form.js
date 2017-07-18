@@ -72,6 +72,7 @@ $(document).ready(function(){
     }
   }
 
+/*
   $('.button-next').click(function(){
     formHeight = $('.form-1').outerHeight();
     formHeightOffset = -(formHeight + 120)
@@ -95,7 +96,7 @@ $(document).ready(function(){
     $('.quote-wrapper > p').hide();
     //initTabbing();
   });
-
+*/
   $('select').customSelect();// reset select box styles
   //$('.customSelect').attr('tabindex', 1);
   $(".telephone").mask("(999) 999-9999");
@@ -104,6 +105,6 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-  formHeight = $('.form-1').outerHeight();
+  formHeight = $('form').outerHeight();
   setFormHeight(formHeight);
 });

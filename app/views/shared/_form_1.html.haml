@@ -1,57 +1,63 @@
-= form_for @customer, url: customers_path, :html => {:class => 'form-1'} do |f|
-  - if flash[:notice]
-    .success-notice
-      %h2
-        Thank you.
-        %br
-        = flash[:notice]
-      %h2 Questions?
-      %p call 222-222-2222 or email info@moka.life
-  = render 'shared/error_messages'
+.quote-wrapper#quote
+  %h4 Start protecting your legacy
 
-  = f.label :age, "I'm a"
-  = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
+  .forms-wrapper{:data => {:id => "<%= session[:current_customer_id] %>"}}
+    = form_for @customer, url: customers_path, :html => {:class => 'form-1'} do |f|
+      - if flash[:notice]
+        .success-notice
+          %h2
+            Thank you.
+            %br
+            = flash[:notice]
+          %h2 Questions?
+          %p call 222-222-2222 or email info@moka.life
+      = render 'shared/error_messages'
 
-  =f.label :gender, "year old"
-  = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
-  %span.fake-period .
-  =## f.collection_select(:customer_id, Customer.all, :id, :name)
+      = f.label :age, "I'm a"
+      = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
 
-  %br
+      =f.label :gender, "year old"
+      = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
+      %span.fake-period .
+      =## f.collection_select(:customer_id, Customer.all, :id, :name)
 
-  = f.label "state", "I live in"
-  = f.select :state, options_for_select(us_states, "VA")
-  %span.fake-period .
+      %br
 
-  %span.input-sentance
-    =f.label "smoker", "I"
-    =f.select(:smoker, [["don't", 1], ["do", 2]])
-    = f.label "smoker", "use tobacco."
+      = f.label "state", "I live in"
+      = f.select :state, options_for_select(us_states, "VA")
+      %span.fake-period .
 
-  %span.input-sentance
-    = f.label "coverage_amount", "I need"
-    = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
-    %span.coverage-hover
-      in coverage *
-      .coverage-tooltip
-        %h6 How much coverage should I get?
-        %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 times your income.
+      %span.input-sentance
+        =f.label "smoker", "I"
+        =f.select(:smoker, [["don't", 1], ["do", 2]])
+        = f.label "smoker", "use tobacco."
 
-
-  %span.input-sentance
-    = label_tag "contact-method", "Contact me using"
-    = field_set_tag do
-      = radio_button_tag 'contact-method', 'email',checked:true
-      = label_tag 'contact-method_email', 'email'
-      = radio_button_tag 'contact-method', 'text'
-      = label_tag 'contact-method_text', 'text'
-      = radio_button_tag 'contact-method', 'voice'
-      = label_tag 'contact-method_voice', 'voice'
+      %span.input-sentance
+        = f.label "coverage_amount", "I need"
+        = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
+        %span.coverage-hover
+          in coverage *
+          .coverage-tooltip
+            %h6 How much coverage should I get?
+            %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 times your income.
 
 
-  = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
-  = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
+      %span.input-sentance
+        = label_tag "contact-method", "Contact me using"
+        = field_set_tag do
+          = radio_button_tag 'contact-method', 'email',checked:true
+          = label_tag 'contact-method_email', 'email'
+          = radio_button_tag 'contact-method', 'text'
+          = label_tag 'contact-method_text', 'text'
+          = radio_button_tag 'contact-method', 'voice'
+          = label_tag 'contact-method_voice', 'voice'
 
-  %span.input-sentance
-    = f.submit "We'll contact you", :class => "button"
-    %span.button-next.alt-button{:tabindex => "1"} Continue for a quote
+
+      = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
+      = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
+
+      %span.input-sentance
+        = f.submit "We'll contact you", :class => "button"
+        = f.submit "Continue for a quote", :class => "alt-button button-next", :name => "continue_to_next_form"
+
+        -#%span.button-next.alt-button{:tabindex => "1"} Continue for a quote
