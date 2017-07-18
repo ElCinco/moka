@@ -36,8 +36,13 @@ class CustomersController < ApplicationController
   end
 
   def update
-    session[:current_customer_id] = @customer.id
-    @current_cust = session[:current_customer_id]
+    @customer = Customer.find(params[:id])
+    if @customer.update_attributes(customer_params)
+      flash[:success] = "Profile updated"
+      redirect_to @customer
+    else
+      render 'faqs'
+    end
   end
 
   def customer_params

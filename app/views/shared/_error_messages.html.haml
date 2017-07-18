@@ -1,7 +1,5 @@
 - if @customer.errors.any?
   #error_explanation
-    .alert.alert-danger
-      There were #{pluralize(@customer.errors.count, "error")}
     %ul
       - @customer.errors.full_messages.each do |msg|
         %li= msg

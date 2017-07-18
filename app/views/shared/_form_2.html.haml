@@ -3,7 +3,14 @@
 
   .forms-wrapper{:data => {:id => "<%= session[:current_customer_id] %>"}}
     =form_for @customer, :html => {:class => 'form-2'} do |f|
-
+      - if flash[:notice]
+        .success-notice
+          %h2
+            Thank you.
+            %br
+            = flash[:notice]
+          %h2 Questions?
+          %p call 222-222-2222 or email info@moka.life
       = render 'shared/error_messages'
 
       =f.label "name", "My name is"
