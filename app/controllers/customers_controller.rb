@@ -11,6 +11,11 @@ class CustomersController < ApplicationController
         @current_cust = session[:current_customer_id]
         logger.debug "user:" + session[:current_customer_id].to_s
         #render 'home/index'
+
+        tracker do |t|
+          t.facebook_pixel :track, { type: 'CompleteRegistration', options: { value: 25, currency: 'USD' } }
+        end
+
         redirect_to @customer
 
       else
@@ -24,6 +29,10 @@ class CustomersController < ApplicationController
         logger.debug "user is:" + session[:current_customer_id].to_s
 
         flash[:notice] = "We'll reach out to you shortly"
+        tracker do |t|
+          t.facebook_pixel :track, { type: 'CompleteRegistration', options: { value: 25, currency: 'USD' } }
+        end
+
         redirect_to root_path
       else
         render '/home/index'  #errors are displayed in view
@@ -41,6 +50,10 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     if @customer.update_attributes(customer_params)
       flash[:success] = "We'll reach out shortly with your quote"
+      tracker do |t|
+        t.facebook_pixel :track, { type: 'Lead', options: { value: 10, currency: 'USD' } }
+      end
+
       redirect_to @customer
       session[:customer_updated] = true
     else
