@@ -187,6 +187,8 @@
       background:transparent;
     }
     &[type="submit"] {
+      -webkit-appearance: none;
+      margin-bottom: 6px;
       border:none;
       border-radius: 3px;
       font-weight: bold;
