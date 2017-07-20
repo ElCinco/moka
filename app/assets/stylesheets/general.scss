@@ -114,7 +114,7 @@ h4 {
 dl {
   margin: 0px auto;
   padding:0 24px;
-  min-width: 420px;
+  max-width: 510px;
   dt {
     font-size: 1.5em;
     color: #f9fbf5;
@@ -132,6 +132,7 @@ dl {
 .page {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 // Top level styes END //////////////////////////////
 // Global classes styes START //////////////////////////////

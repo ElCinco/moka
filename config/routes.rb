@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/', to: 'home#index'
 
-  resources :customers, only: [:create, :update, :show]
+  resources :customers
 
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

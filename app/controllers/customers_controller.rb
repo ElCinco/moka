@@ -1,4 +1,16 @@
 class CustomersController < ApplicationController
+
+  before_filter :require_authentication, :only => [:index]
+
+  def index
+  end
+
+  def require_authentication
+    authenticate_or_request_with_http_basic do |u,p|
+      u == "brikka" and p == "3muls10n" 
+    end
+  end
+
   def create
     @customer = Customer.new(customer_params)
     @customer.save
@@ -12,7 +24,7 @@ class CustomersController < ApplicationController
         logger.debug "user:" + session[:current_customer_id].to_s
         #render 'home/index'
 
-      
+
 
         redirect_to @customer
 
