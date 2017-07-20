@@ -18,7 +18,28 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
 
-
+    / Facebook Pixel Code
+    :javascript
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '151609688731241'); // Insert your pixel ID here.
+      fbq('track', 'PageView');
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=151609688731241&ev=PageView&noscript=1", :style => "display:none", :width => "1"}/
+    / DO NOT MODIFY
+    / End Facebook Pixel Code
+    :javascript
+      fbq(‘track’, ‘Lead’, {
+      value: 10.00,
+      currency: ‘USD’
+      });
+      fbq(‘track’, ‘CompleteRegistration’, {
+      value: 25.00,
+      currency: ‘USD’
+      });
   %body{:data => {:controller => controller.controller_path, :action => controller.action_name }}
     =render '/shared/header'
     = yield
