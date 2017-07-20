@@ -89,14 +89,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # google tracking
-  config.middleware.use(Rack::Tracker) do
-    handler :google_analytics, { tracker: 'UA-102041854-1', async: '1' }
-  end
 
-  #fb tracking
-  config.middleware.use(Rack::Tracker) do
-    handler :facebook, { id: '151609688731241' }
-  end
 
 end
