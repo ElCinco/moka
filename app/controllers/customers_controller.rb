@@ -1,8 +1,10 @@
 class CustomersController < ApplicationController
 
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
 
   def index
-    @customers = Customer.all
+    @customers = smart_listing_create :customers, partial: "customers/list"
   end
 
 

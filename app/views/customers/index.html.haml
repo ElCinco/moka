@@ -1,6 +1,1 @@
-- provide(:title, 'All users')
-%h1 All Customers
-%ul.users
-  - @customers.each do |customer|
-    %li
-      = link_to customer.id, customer
+= smart_listing_render :customers
