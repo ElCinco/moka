@@ -42,13 +42,13 @@
     / DO NOT MODIFY
     / End Facebook Pixel Code
     :javascript
-      fbq(‘track’, ‘Lead’, {
+      fbq("track", "Lead", {
       value: 10.00,
-      currency: ‘USD’
+      currency: "USD"
       });
-      fbq(‘track’, ‘CompleteRegistration’, {
+      fbq("track", "CompleteRegistration", {
       value: 25.00,
-      currency: ‘USD’
+      currency: "USD"
       });
   %body{:data => {:controller => controller.controller_path, :action => controller.action_name }}
     =render '/shared/header'
