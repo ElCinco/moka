@@ -56,6 +56,8 @@
       = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
       = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
 
+      = #hidden_field_tag :has_been_contacted, :false
+
       %span.input-sentance
         = f.submit "We'll contact you", :class => "button"
         = f.submit "Continue for a quote", :class => "alt-button button-next", :name => "continue_to_next_form"

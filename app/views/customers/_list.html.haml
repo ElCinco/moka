@@ -1,15 +1,15 @@
 - unless smart_listing.empty?
   %table.table.table-striped
     %thead
-      %th.col-md-3= "Name"
-      %th.col-md-3= "Phone"
-      %th.col-md-4= "Location"
-      %th
-        %span.glyphicon.glyphicon-shopping-cart{title: "Has credit card?"}
-      %th.col-md-2= "Wallet saldo"
+      %th.col-md-3= "ID"
+      %th.col-md-3= "has been contacted"
     %tbody
       - smart_listing.collection.each do |o|
         %tr
+          %td
+            = o.id
+          %td
+            = o.has_been_contacted
           -# User row goes here...
 
   -# Render nice pagination links fitted for Bootstrap 3 by default

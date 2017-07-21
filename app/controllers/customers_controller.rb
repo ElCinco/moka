@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
   helper  SmartListing::Helper
 
   def index
-    @customers = smart_listing_create :customers, partial: "customers/list"
+    @customers = smart_listing_create :customers, Customer.all, partial: "customers/list"
   end
 
 
@@ -63,6 +63,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy)
+    params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy, :has_been_contacted)
   end
 end
