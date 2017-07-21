@@ -3,7 +3,11 @@ class CustomersController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
+  helper_method :admin?
   def index
+    authenticate_or_request_with_http_basic do |user_name, password|
+      session[:customer] = "admin" if user_name == 'brikka' && password == '3muls10n'
+    end
     @customers = smart_listing_create :customers, Customer.all, partial: "customers/list"
   end
 
@@ -65,4 +69,9 @@ class CustomersController < ApplicationController
   def customer_params
     params.require(:customer).permit(:age, :gender, :email, :phone_number, :state, :smoker, :coverage_amount, :customer_name, :weight, :height, :marriage_status, :children, :income_range, :health_rating, :currently_has_policy, :has_been_contacted)
   end
+
+  private
+    def admin?
+      session[:customer] == "admin"
+    end
 end
