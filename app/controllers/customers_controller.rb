@@ -6,9 +6,12 @@ class CustomersController < ApplicationController
   helper_method :admin?
   def index
     authenticate_or_request_with_http_basic do |user_name, password|
-      session[:customer] = "admin" if user_name == 'brikka' && password == '3muls10n'
+      session[:user] = "admin" if user_name == 'brikka' && password == '3muls10n'
     end
-    @customers = smart_listing_create :customers, Customer.all, partial: "customers/list"
+    @customers = smart_listing_create :customers,
+                      Customer.all,
+                      partial: "customers/list",
+                      default_sort: {has_been_contacted: "asc"}
   end
 
 
@@ -53,16 +56,34 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def edit
+    @customer = Customer.find(params[:id])
+    @customer.skip_name_validation = true
+    if @customer.update_attributes(:has_been_contacted => params[:has_been_contacted])
+      logger.debug "fuck yay:"
+    else
+      logger.debug "fuck nay"
+    end
+
+  end
+
+
   def update
     @customer = Customer.find(params[:id])
+    @customer.skip_name_validation = true
+
     if @customer.update_attributes(customer_params)
       flash[:success] = "We'll reach out shortly with your quote"
 
 
       redirect_to @customer
       session[:customer_updated] = true
+      logger.debug "yay:"
+
     else
-      render '/customers/show'
+      render '/customers/edit'
+      logger.debug "nay"
+
     end
   end
 
@@ -72,6 +93,6 @@ class CustomersController < ApplicationController
 
   private
     def admin?
-      session[:customer] == "admin"
+      session[:user] == "admin"
     end
 end

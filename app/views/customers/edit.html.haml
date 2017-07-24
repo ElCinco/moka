@@ -1,0 +1,32 @@
+
+= @customer.id
+
+= @customer.customer_name
+
+
+= form_for @customer, :remote => true do |f|
+  = render 'shared/error_messages'
+
+  = f.check_box :has_been_contacted, {:checked => @customer.has_been_contacted.to_s,:class => @customer.has_been_contacted.to_s}, "true", "false"
+  = #check_box_tag :has_been_contacted, {:checked => @customer.has_been_contacted}, :value => @customer.has_been_contacted
+  = f.submit :class => "not-hidden"
+  -#, data: { remote: true, url: url_for(customers: :toggle, id: @customer.id), method: "POST" }
+
+
+
+-#
+  :javascript
+    $(".contact-check").bind('change', function(){
+      if (this.checked){
+        $.ajax({
+          url: '/customers/'+{@customer.id}+'/edit',
+          type: 'POST',
+          data: {"has_been_contacted": this.checked}
+        });
+        alert("yes");
+
+      }
+      else {
+        alert("no");
+      }
+    });

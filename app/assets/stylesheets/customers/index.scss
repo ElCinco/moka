@@ -1,0 +1,43 @@
+.smart-listing {
+  margin:60px 0;
+  .content {
+    display: block;
+    > * {
+      padding:initial;
+    }
+    a {
+      color: #999;
+    }
+    table {
+      text-align: center;
+      margin: auto;
+      min-width: 420px;
+      thead {
+        text-align: center;
+
+      }
+      tbody {
+        > tr {
+          td {
+            background-color: #fff;
+            color:#777;
+            padding:4px 10px;
+            border-bottom: 1px solid #ddd;
+          }
+          &:nth-child(odd) > td {
+            background-color: #f9f9f9;
+            color:#aaa;
+          }
+        }
+      }
+    }
+    .pagination {
+      a {
+        color: #fff;
+      }
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
