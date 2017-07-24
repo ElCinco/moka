@@ -4,11 +4,11 @@
 
 .content
   - if session[:current_customer_id].blank?
-    =#render '/shared/form_1'
-    =render '/shared/thanks'
-  - else
-    =#render '/shared/thanks'
     =render '/shared/form_1'
+    =#render '/shared/thanks'
+  - else
+    =render '/shared/thanks'
+    =#render '/shared/form_1'
 
   .resource-list
     %ul.our-process

@@ -31,6 +31,7 @@ class CustomersController < ApplicationController
 
 
         redirect_to @customer
+        #render 'shared/fb_pixel_1'
 
       else
         render 'home/index' #errors are displayed in view

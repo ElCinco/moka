@@ -72,6 +72,7 @@ $(document).ready(function(){
     }
   }
 
+
 /*
   $('.button-next').click(function(){
     formHeight = $('.form-1').outerHeight();
