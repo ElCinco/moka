@@ -1,0 +1,31 @@
+%h2 customers
+- unless smart_listing.empty?
+  %table.table.table-striped
+    %thead
+      %th.col-md-3= smart_listing.sortable "ID", :id
+      %th.col-md-3 name
+      %th.col-md-3= smart_listing.sortable "Contacted?", :has_been_contacted
+      %th.col-md-3 email
+      %th.col-md-3 phone
+    %tbody
+      - smart_listing.collection.each do |o|
+        %tr
+          %td
+            = o.id
+          %td
+            = o.customer_name
+          - if o.has_been_contacted
+            %td yes
+          - else
+            %td no
+            %td
+              = o.email
+            %td
+              = o.phone_number
+          %td
+            = link_to("view", edit_customer_path(o.id))
+  -# Render nice pagination links fitted for Bootstrap 3 by default
+  = smart_listing.paginate
+  = smart_listing.pagination_per_page_links
+- else
+  %p.warning No records!
