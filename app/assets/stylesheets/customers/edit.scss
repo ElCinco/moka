@@ -1,0 +1,29 @@
+body[data-action="edit"] {
+  .edit-content {
+    max-width:420px;
+    margin:auto;
+  }
+  dl {
+//    margin: 0 auto;
+    padding:initial;
+//    width: 210px;
+    display: inline-block;
+    vertical-align: top;
+    //display: flex;
+    //justify-content: flex-end;
+    dl, dd {
+      margin: initial;
+      //display: inline-block;
+    }
+    dt {
+      font-size: initial;
+      color: #f9fbf5;
+      font-weight: 400;
+      min-width: 180px;
+    }
+    dd {
+      margin-bottom:.8em;
+      color: rgba(255,255,255,.7)
+    }
+  }
+}

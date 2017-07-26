@@ -1,16 +1,70 @@
+%h2
+  Customer id:
+  %span.italic
+    = @customer.id
 
-= @customer.id
+.edit-content
+  = form_for @customer, :remote => true do |f|
+    = render 'shared/error_messages'
 
-= @customer.customer_name
+    = f.check_box :has_been_contacted, {:checked => @customer.has_been_contacted.to_s,:class => @customer.has_been_contacted.to_s}, "true", "false"
+    = f.label :has_been_contacted, "has been contacted?"
+    = #check_box_tag :has_been_contacted, {:checked => @customer.has_been_contacted}, :value => @customer.has_been_contacted
+    = f.submit :class => "hidden"
+    -#, data: { remote: true, url: url_for(customers: :toggle, id: @customer.id), method: "POST" }
+  %br
+
+  %dl
+    %dt Email
+    %dd
+      = @customer.email
+    %dt Phone #
+    %dd
+      = @customer.phone_number
+    %dt Age
+    %dd
+      = @customer.age
+    %dt Gender
+    %dd
+      = @customer.gender
+    %dt State
+    %dd
+      = @customer.state
+    %dt Smoker
+    %dd
+      = @customer.smoker
+    %dt Desired coverage
+    %dd
+      = @customer.coverage_amount
+  %dl
+    %dt Name
+    %dd
+      = @customer.customer_name
+    %dt weight
+    %dd
+      = @customer.weight
+    %dt height
+    %dd
+      = @customer.height
+    %dt marriage status
+    %dd
+      = @customer.marriage_status
+    %dt children
+    %dd
+      = @customer.children
+    %dt income range
+    %dd
+      = @customer.income_range
+    %dt general health
+    %dd
+      = @customer.health_rating
+    %dt has policy?
+    %dd
+      = @customer.currently_has_policy
 
 
-= form_for @customer, :remote => true do |f|
-  = render 'shared/error_messages'
 
-  = f.check_box :has_been_contacted, {:checked => @customer.has_been_contacted.to_s,:class => @customer.has_been_contacted.to_s}, "true", "false"
-  = #check_box_tag :has_been_contacted, {:checked => @customer.has_been_contacted}, :value => @customer.has_been_contacted
-  = f.submit :class => "not-hidden"
-  -#, data: { remote: true, url: url_for(customers: :toggle, id: @customer.id), method: "POST" }
+
 
 
 
