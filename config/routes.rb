@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'form_2/index'
+
   get 'home/:id', to: 'home#show', as: 'home'
   get '/faqs', to: 'home#faqs'
   get '/about', to: 'home#about'
