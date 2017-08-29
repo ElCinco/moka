@@ -76,13 +76,12 @@ input[type="radio"] {
     }
   }
 }
-.tt-hint {
-  color:#fff;
-}
+
 .tt-open {
     background: #fff;
     width: 100%;
     color: rgba(0,0,0,.6);
+    border-bottom: 6px solid #3c8ccb;
     .tt-suggestion {
       padding: 8px;
     }

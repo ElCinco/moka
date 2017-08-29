@@ -59,7 +59,7 @@ $(document).ready(function(){
   ];
 
   $('.typeahead').typeahead({
-    hint: true,
+    hint: false,
     highlight: true,
     minLength: 1
   },
