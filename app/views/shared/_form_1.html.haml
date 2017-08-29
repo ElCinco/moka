@@ -17,7 +17,6 @@
   =# f.select :state, options_for_select(us_states, "VA")
 
   = f.label :age, "I am a"
-
   = f.text_field :age, :placeholder => "27 year old", :type => "number", :pattern => "[0-9]*"
   =#s f.select "age", options_for_select(21..55, 26), :tabindex => "1"
 
