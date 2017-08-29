@@ -1,21 +1,53 @@
 @import '_placeholders.scss';
 
+form {
+  > * {
+    margin: 10px auto;
+  }
+}
 
-.form-1 {
-  transition: margin .4s ease-in-out;
-  input[type="radio"] {
-    & + label {
-      border: 1px solid rgba(255,255,255,0);
-      border-radius: 3px;
-      padding: 0 14px;
-      margin: 0px -6px;
+input[type="radio"] {
+  & + label {
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 3px;
+    padding: 0 14px;
+    margin: 0px -6px;
+  }
+  &:checked + label {
+    border: 1px solid rgba(255,255,255,.6);
+  }
+}
+
+.inline-label-wrapper {
+  position: relative;
+  width:fit-content;
+  input  {
+    padding-right: 68px;
+    //margin-left: 60px;
+    &#customer_height {
+      padding-right: 35px;
     }
-    &:checked + label {
-      border: 1px solid rgba(255,255,255,.6);
+  }
+  label {
+    color: initial;
+    position: absolute;
+    top:11px;
+    font-size:.9rem;
+    color:#777575;
+    &[for=customer_age]{
+      left:107px;
+    }
+    &[for=customer_height], &[for=customer_weight]{
+      left:112px;
+    }
+    &[for=customer_children]{
+      left:104px;
     }
   }
 }
-.form-2 {
+
+
+.star-selector {
   input[type="radio"] {
     & + label {
       width:20px;
@@ -47,12 +79,16 @@
 
 fieldset {
   display: inline-block;
+  margin: initial;
+  input[type="radio"] + label {
+    padding: 20px;
+  }
 }
 
 label, input, select {
   display: block;
-  margin: auto;
 }
+
 
 
 select, .customSelect {
@@ -67,9 +103,12 @@ input:-webkit-autofill:active {
 transition-delay: 9999s;
 }
 input {
+  font-size:.9rem;
   border:none;
   border-radius: 0;
   text-align: center;
+  padding: 8px 12px;
+  text-transform: lowercase; //oddly important
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px rgba(249,251,208,.4) inset !important;
     &:focus {
@@ -80,7 +119,7 @@ input {
     @extend %button
   }
   &::placeholder {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 
   &[type="text"], &[type="tel"] {

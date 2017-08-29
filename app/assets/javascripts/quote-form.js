@@ -7,17 +7,26 @@ function ContactMethod(selectedIndex) {
     $('input.telephone').removeClass('hidden')
   }
 }
+/*
 function setFormHeight(formHeight) {
   $('.forms-wrapper').css('height', (formHeight + 3));
 }
+*/
 
 $(document).ready(function(){
-
-
-  $('.form-1 input[type="radio"] + label').click(function(){
+  $('.contact-selector input[type="radio"] + label').click(function(){
     selectedIndex = $(this).index();
     ContactMethod(selectedIndex);
   });
+
+  $(".telephone").mask("(999) 999-9999");
+  $("input#customer_age").mask("99");
+  $("input#customer_height").mask("9\'9\"");
+  $("input#customer_weight").mask("999");
+  $("input#customer_children").mask("9");
+
+/*
+
 
 
   starLabel = $('.form-2 input[type="radio"] + label')
@@ -73,7 +82,7 @@ $(document).ready(function(){
   }
 
 
-/*
+
   $('.button-next').click(function(){
     formHeight = $('.form-1').outerHeight();
     formHeightOffset = -(formHeight + 120)
@@ -101,12 +110,12 @@ $(document).ready(function(){
 
 
   //$('select').customSelect();// reset select box styles
-  //$(".telephone").mask("(999) 999-9999");
+
 
 
 });
 
 $(window).load(function(){
-  formHeight = $('form').outerHeight();
-  setFormHeight(formHeight);
+  //formHeight = $('form').outerHeight();
+  //setFormHeight(formHeight);
 });

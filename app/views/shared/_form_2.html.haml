@@ -10,7 +10,7 @@
   = render 'shared/error_messages'
 
   = f.label :age, "I am a"
-  = f.text_field :age, :placeholder => "27 year old", :type => "number", :pattern => "[0-9]*"
+  = f.text_field :age, :placeholder => "27 year old", :type => "text", :pattern => "[0-9]*"
 
   = field_set_tag do
     = radio_button_tag 'gender', 'woman',checked:true
@@ -36,7 +36,7 @@
 
 
   = label_tag "contact-method", "Contact me using"
-  = field_set_tag do
+  = field_set_tag nil, :class => "contact-selector" do
     = radio_button_tag 'contact-method', 'email',checked:true
     = label_tag 'contact-method_email', 'email'
     = radio_button_tag 'contact-method', 'text'

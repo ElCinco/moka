@@ -17,8 +17,12 @@
   =# f.select :state, options_for_select(us_states, "VA")
 
   = f.label :age, "I am a"
-  = f.text_field :age, :placeholder => "27 year old", :type => "number", :pattern => "[0-9]*"
-  =#s f.select "age", options_for_select(21..55, 26), :tabindex => "1"
+  .inline-label-wrapper
+    = f.text_field :age, :placeholder => "27", :type => "text", :pattern => "[0-9]*", :class => "inline"
+    = f.label :age, "year old", :class => "inline input-inline-with-label"
+
+  %br
+
 
   = field_set_tag do
     = radio_button_tag 'gender', 'woman',checked:true
@@ -27,11 +31,14 @@
     = label_tag 'gender_man', 'man'
 
   =f.label "height", "I am"
-  = f.text_field :height, :placeholder => "5\'8\" tall", :type => "number", :pattern => "[0-9]*"
+  .inline-label-wrapper
+    = f.text_field :height, :placeholder => "5\'8\"", :type => "text", :pattern => "[0-9]*", :class => "inline"
+    = f.label :height, "tall", :class => "inline input-inline-with-label"
 
   =f.label "weight", "I weigh"
-  = f.text_field :weight, :placeholder => "165 pounds", :type => "number", :pattern => "[0-9]*"
-  =#f.select :weight, options_for_select([ ">125", "125-150", "150-175", "175-200", "200-250", "250-300", "300+" ], "125-150")
+  .inline-label-wrapper
+    = f.text_field :weight, :placeholder => "165", :type => "text", :pattern => "[0-9]*", :class => "inline"
+    = f.label :weight, "pounds", :class => "inline input-inline-with-label"
 
   =f.label "relationshipStatus", "I am"
   = field_set_tag do
@@ -42,8 +49,9 @@
 
 
   =f.label "children", "I have"
-  = f.text_field :children, :placeholder => "2 children", :type => "number", :pattern => "[0-9]*"
-  =#f.text_field :kids, :placeholder => "2 children", :type => "number", :pattern => "[0-9]*"
+  .inline-label-wrapper
+    = f.text_field :children, :placeholder => "2", :type => "text", :pattern => "[0-9]*", :class => "inline"
+    = f.label :children, "children", :class => "inline input-inline-with-label"
 
   =f.label "smoker", "I"
   = field_set_tag do

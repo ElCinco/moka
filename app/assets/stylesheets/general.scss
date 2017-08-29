@@ -12,7 +12,6 @@ body, html {
 body {
   font-family: 'Soleto', -apple-system, Helvetica, Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
-  line-height: 1.7;
   margin: auto;
   position:relative;
   color:#fff;
@@ -137,6 +136,9 @@ dl {
 }
 .button {
   @extend %button
+}
+.inline {
+  display: inline;
 }
 .fake-period {
   margin-left: -6px;
