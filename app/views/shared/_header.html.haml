@@ -1,2 +1,10 @@
 %nav
   =link_to image_tag('main-logo.png'),root_path, :tabindex => '1'
+  %span.nav-btn show nav
+  %ul.nav-dropdown.hidden
+    %li thing
+    %li thing
+    %li thing
+    %li thing
+    %li
+      =link_to "close nav", "#", :class => "close-nav-btn"

@@ -64,18 +64,28 @@
   =f.label "smoker", "use tobacco."
 
 
-  =label_tag "incomeRange", "My income range is"
-  %select{:tabindex => "-1", :name => "incomeRange"}
-    %option{:value => "0"} > 25k
-    %option{:value => "1"} 25-50k
-    %option{:value => "2", :selected => "selected"} 50-75k
-    %option{:value => "3"} 75-100k
-    %option{:value => "4"} 100-125k
-    %option{:value => "5"} 125-200k
-    %option{:value => "6"} 200k+
+  =label_tag "incomeRange", "My income is"
+  = field_set_tag do
+    = radio_button_tag 'incomeRange', '<50'
+    = label_tag 'incomeRange_<50', '< 50k'
+    = radio_button_tag 'incomeRange', '50-100',checked:true
+    = label_tag 'incomeRange_50-100', '50-100k'
+    = radio_button_tag 'incomeRange', '100-250'
+    = label_tag 'incomeRange_100-250', '100-250k'
+    = radio_button_tag 'incomeRange', '250<'
+    = label_tag 'incomeRange_250<', '250k <'
 
-  = f.label "coverage_amount", "I need"
-  = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
+  = f.label "coverage_amount", "I would like"
+  = field_set_tag do
+    = radio_button_tag 'coverage_amount', '250'
+    = label_tag 'coverage_amount_250', '250k'
+    = radio_button_tag 'coverage_amount', '500',checked:true
+    = label_tag 'coverage_amount_500', '500k'
+    = radio_button_tag 'coverage_amount', '750'
+    = label_tag 'coverage_amount_750', '750k'
+    = radio_button_tag 'coverage_amount', '1000'
+    = label_tag 'coverage_amount_1000', '1m'
+
   %p.coverage-hover
     in coverage *
     .coverage-tooltip
