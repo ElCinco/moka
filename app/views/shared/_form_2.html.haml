@@ -30,7 +30,15 @@
   =f.label "smoker", "use tobacco."
 
   = f.label "coverage_amount", "I would like"
-  = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
+  = field_set_tag do
+    = radio_button_tag 'coverage_amount', '250'
+    = label_tag 'coverage_amount_250', '250k'
+    = radio_button_tag 'coverage_amount', '500',checked:true
+    = label_tag 'coverage_amount_500', '500k'
+    = radio_button_tag 'coverage_amount', '750'
+    = label_tag 'coverage_amount_750', '750k'
+    = radio_button_tag 'coverage_amount', '1000'
+    = label_tag 'coverage_amount_1000', '1m'
   %p.coverage-hover
     in coverage *
     .coverage-tooltip
@@ -51,7 +59,7 @@
   = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "email"
   = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
 
-  %input.button{:type => "submit", :value => "submit or be destroyed"}
+  %input.button{:type => "submit", :value => "submit"}
 
 -#
   =f.label "name", "My name is"
