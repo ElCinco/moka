@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'home/:id', to: 'home#show', as: 'home'
   get '/quote', to: 'home#quote'
+  get '/information', to: 'home#information'
   get '/faqs', to: 'home#faqs'
   get '/about', to: 'home#about'
   get '/', to: 'home#index'

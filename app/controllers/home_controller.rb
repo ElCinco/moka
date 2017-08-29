@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @customer = Customer.new
   end
 
+  def information
+    @customer = Customer.new
+  end
+
   def about
     end
 
