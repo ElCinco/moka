@@ -10,8 +10,11 @@
   = render 'shared/error_messages'
 
   = f.label :age, "I am a"
-  = f.text_field :age, :placeholder => "27 year old", :type => "text", :pattern => "[0-9]*"
+  .inline-label-wrapper
+    = f.text_field :age, :placeholder => "27", :type => "text", :pattern => "[0-9]*", :class => "inline"
+    = f.label :age, "year old", :class => "inline input-inline-with-label"
 
+  %br
   = field_set_tag do
     = radio_button_tag 'gender', 'woman',checked:true
     = label_tag 'gender_woman', 'woman'
@@ -47,6 +50,8 @@
 
   = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "email"
   = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
+
+  %input.button{:type => "submit", :value => "submit or be destroyed"}
 
 -#
   =f.label "name", "My name is"

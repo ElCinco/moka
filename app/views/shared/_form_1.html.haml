@@ -13,8 +13,9 @@
   =f.text_field :customer_name, :placeholder => "Sam Smith"
 
   = f.label "state", "I live in"
-  = f.text_field :state, :placeholder => "Virginia"
+  = f.text_field :state, :placeholder => "Virginia", :class => "typeahead"
   =# f.select :state, options_for_select(us_states, "VA")
+
 
   = f.label :age, "I am a"
   .inline-label-wrapper
@@ -22,6 +23,7 @@
     = f.label :age, "year old", :class => "inline input-inline-with-label"
 
   %br
+
 
 
   = field_set_tag do

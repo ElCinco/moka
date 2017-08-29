@@ -76,6 +76,17 @@ input[type="radio"] {
     }
   }
 }
+.tt-hint {
+  color:#fff;
+}
+.tt-open {
+    background: #fff;
+    width: 100%;
+    color: rgba(0,0,0,.6);
+    .tt-suggestion {
+      padding: 8px;
+    }
+}
 
 fieldset {
   display: inline-block;
