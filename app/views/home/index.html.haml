@@ -1,16 +1,23 @@
 .img-bg{:class => "bgd-#{rand(1..15)}"}
 
-%h2 The coverage you need. Made simple
+%h2 Welcome
+%h3 What can we help you with?
 
 .content
-  - if session[:current_customer_id].blank?
-    =render '/shared/form_1'
-    =#render '/shared/thanks'
-  - else
-    =render '/shared/thanks'
-    =#render '/shared/form_1'
+  %ul.main-menu
+    %li
+      =link_to 'Get me a quote', quote_path
+    %li Get me information
+    %li Chat with an agent
+    %li Get me answers
 
-  .resource-list
+
+
+
+
+
+
+  .resource-list.hidden
     %ul.our-process
       %li
         %h4 Our Process

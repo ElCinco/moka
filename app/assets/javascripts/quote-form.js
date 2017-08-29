@@ -98,9 +98,10 @@ $(document).ready(function(){
     //initTabbing();
   });
 */
-  $('select').customSelect();// reset select box styles
-  //$('.customSelect').attr('tabindex', 1);
-  $(".telephone").mask("(999) 999-9999");
+
+
+  //$('select').customSelect();// reset select box styles
+  //$(".telephone").mask("(999) 999-9999");
 
 
 });

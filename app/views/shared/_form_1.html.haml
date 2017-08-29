@@ -1,65 +1,84 @@
-.quote-wrapper#quote
-  %h4 Start protecting your legacy
+= form_for @customer, :html => {:class => 'form-1'} do |f|
+  - if flash[:notice]
+    .success-notice
+      %h2
+        Thank you.
+        %br
+        = flash[:notice]
+      %h2 Questions?
+      %p call 571 351 7567 or email info@moka.life
+  = render 'shared/error_messages'
 
-  .forms-wrapper{:data => {:id => "<%= session[:current_customer_id] %>"}}
-    = form_for @customer, :html => {:class => 'form-1'} do |f|
-      - if flash[:notice]
-        .success-notice
-          %h2
-            Thank you.
-            %br
-            = flash[:notice]
-          %h2 Questions?
-          %p call 571 351 7567 or email info@moka.life
-      = render 'shared/error_messages'
+  =f.label "name", "My name is"
+  =f.text_field :customer_name, :placeholder => "Sam Smith"
 
-      = f.label :age, "I'm a"
-      = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
+  = f.label "state", "I live in"
+  = f.select :state, options_for_select(us_states, "VA")
 
-      =f.label :gender, "year old"
-      = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
-      %span.fake-period .
-      =## f.collection_select(:customer_id, Customer.all, :id, :name)
+  = f.label :age, "I am a"
+  = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
 
-      %br
+  = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
 
-      = f.label "state", "I live in"
-      = f.select :state, options_for_select(us_states, "VA")
-      %span.fake-period .
+  =f.label "height", "I am"
+  =f.select :weight, options_for_select(heights, "5'9\"")
 
-      %span.input-sentance
-        =f.label "smoker", "I"
-        =f.select(:smoker, [["don't", 1], ["do", 2]])
-        = f.label "smoker", "use tobacco."
+  =f.label "weight", "I weigh"
+  =f.select :weight, options_for_select([ ">125", "125-150", "150-175", "175-200", "200-250", "250-300", "300+" ], "125-150")
 
-      %span.input-sentance
-        = f.label "coverage_amount", "I need"
-        = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
-        %span.coverage-hover
-          in coverage *
-          .coverage-tooltip
-            %h6 How much coverage should I get?
-            %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 times your income.
+  =f.label "relationshipStatus", "I am"
+
+  %select{:tabindex => "-1", :name => "relationshipStatus"}
+    %option{:value => "0"} single
+    %option{:value => "1", :selected => "selected"} married
+    %option{:value => "2"} divorced
+
+  =label_tag "kids", "I have"
+  =select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
+
+  =f.label "smoker", "I"
+  =f.select(:smoker, [["don't", 1], ["do", 2]])
+  = f.label "smoker", "use tobacco."
+
+  =label_tag "incomeRange", "My income is"
+  %select{:tabindex => "-1", :name => "incomeRange"}
+    %option{:value => "0"} > 25k
+    %option{:value => "1"} 25-50k
+    %option{:value => "2", :selected => "selected"} 50-75k
+    %option{:value => "3"} 75-100k
+    %option{:value => "4"} 100-125k
+    %option{:value => "5"} 125-200k
+    %option{:value => "6"} 200k+
+
+  = f.label "coverage_amount", "I need"
+  = f.select :coverage_amount, options_for_select([ ["$250,000", 1], ["$500,000", 2], ["$750,000", 3], ["$1,000,000", 4] ], ["250,000", 5])
+  %p.coverage-hover
+    in coverage *
+    .coverage-tooltip
+      %h6 How much coverage should I get?
+      %p In general we recommend at least $250,000 of coverage. A good gauge is 10-20 times your income.
+
+  = f.submit "Get Quote", :class => "button form-1"
 
 
-      %span.input-sentance
-        = label_tag "contact-method", "Contact me using"
-        = field_set_tag do
-          = radio_button_tag 'contact-method', 'email',checked:true
-          = label_tag 'contact-method_email', 'email'
-          = radio_button_tag 'contact-method', 'text'
-          = label_tag 'contact-method_text', 'text'
-          = radio_button_tag 'contact-method', 'voice'
-          = label_tag 'contact-method_voice', 'voice'
+  -##
+    %span.input-sentance
+      = label_tag "contact-method", "Contact me using"
+      = field_set_tag do
+        = radio_button_tag 'contact-method', 'email',checked:true
+        = label_tag 'contact-method_email', 'email'
+        = radio_button_tag 'contact-method', 'text'
+        = label_tag 'contact-method_text', 'text'
+        = radio_button_tag 'contact-method', 'voice'
+        = label_tag 'contact-method_voice', 'voice'
 
 
-      = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
-      = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
+    = f.text_field :email, :class => 'contact-type email', :placeholder => "email@yours.com", :type => "text"
+    = f.text_field :phone_number, :class => 'contact-type telephone hidden', :placeholder => "(703) 222-2222", :type => "tel"
 
-      = #hidden_field_tag :has_been_contacted, :false
+    = #hidden_field_tag :has_been_contacted, :false
 
-      %span.input-sentance
-        = f.submit "We'll contact you", :class => "button form-1"
-        = f.submit "Continue for a quote", :class => "alt-button button-next form-1", :name => "continue_to_next_form"
+    %span.input-sentance
+      = f.submit "Continue for a quote", :class => "alt-button button-next form-1", :name => "continue_to_next_form"
 
-        -#%span.button-next.alt-button{:tabindex => "1"} Continue for a quote
+      -#%span.button-next.alt-button{:tabindex => "1"} Continue for a quote
