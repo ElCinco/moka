@@ -92,7 +92,7 @@
 
   fieldset {
     display: inline-block;
-    margin: 0 0px 0 6px;
+    margin: 12px 0 0 0;
   }
 
   label, input, select {
@@ -124,7 +124,7 @@
     border-bottom:1px solid rgba(255,255,255,.6);
     //font-size: 1em;
     text-align: center;
-    color: rgba(255,255,255,.7);
+    //color: rgba(255,255,255,.7);
     font-size: .9rem;
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 1000px rgba(249,251,208,.4) inset !important;
@@ -132,11 +132,16 @@
         -webkit-box-shadow: 0 0 0 1000px rgba(249,251,208,.4) inset !important;
       }
     }
+    &#customer_customer_name {
+      &:after {
+        width:20px;
+        content:"poo";
+      }
+    }
     &.button {
       @extend %button
     }
     &::placeholder {
-      color: rgba(255,255,255,.6);
       font-size: 1rem;
     }
     &.contact-type {

@@ -13,34 +13,49 @@
   =f.text_field :customer_name, :placeholder => "Sam Smith"
 
   = f.label "state", "I live in"
-  = f.select :state, options_for_select(us_states, "VA")
+  = f.text_field :state, :placeholder => "Virginia"
+  =# f.select :state, options_for_select(us_states, "VA")
 
   = f.label :age, "I am a"
-  = f.select "age", options_for_select(21..55, 26), :tabindex => "1"
 
-  = f.select :gender, options_for_select([ ['woman', 'woman'], ['man', 'man'], ['other', 'other']])
+  = f.text_field :age, :placeholder => "27 year old", :type => "number", :pattern => "[0-9]*"
+  =#s f.select "age", options_for_select(21..55, 26), :tabindex => "1"
+
+  = field_set_tag do
+    = radio_button_tag 'gender', 'woman',checked:true
+    = label_tag 'gender_woman', 'woman'
+    = radio_button_tag 'gender', 'man'
+    = label_tag 'gender_man', 'man'
 
   =f.label "height", "I am"
-  =f.select :weight, options_for_select(heights, "5'9\"")
+  = f.text_field :height, :placeholder => "5\'8\" tall", :type => "number", :pattern => "[0-9]*"
 
   =f.label "weight", "I weigh"
-  =f.select :weight, options_for_select([ ">125", "125-150", "150-175", "175-200", "200-250", "250-300", "300+" ], "125-150")
+  = f.text_field :weight, :placeholder => "165 pounds", :type => "number", :pattern => "[0-9]*"
+  =#f.select :weight, options_for_select([ ">125", "125-150", "150-175", "175-200", "200-250", "250-300", "300+" ], "125-150")
 
   =f.label "relationshipStatus", "I am"
+  = field_set_tag do
+    = radio_button_tag 'relationshipStatus', 'single',checked:true
+    = label_tag 'relationshipStatus_single', 'single'
+    = radio_button_tag 'relationshipStatus', 'married'
+    = label_tag 'relationshipStatus_married', 'married'
 
-  %select{:tabindex => "-1", :name => "relationshipStatus"}
-    %option{:value => "0"} single
-    %option{:value => "1", :selected => "selected"} married
-    %option{:value => "2"} divorced
 
-  =label_tag "kids", "I have"
-  =select_tag "kids", options_for_select(0..14, 2), :tabindex => "1"
+  =f.label "children", "I have"
+  = f.text_field :children, :placeholder => "2 children", :type => "number", :pattern => "[0-9]*"
+  =#f.text_field :kids, :placeholder => "2 children", :type => "number", :pattern => "[0-9]*"
 
   =f.label "smoker", "I"
-  =f.select(:smoker, [["don't", 1], ["do", 2]])
-  = f.label "smoker", "use tobacco."
+  = field_set_tag do
+    = radio_button_tag "smoker", "do not",checked:true
+    = label_tag 'smoker_do_not', 'do not'
+    = radio_button_tag 'smoker', 'do'
+    = label_tag 'smoker_do', 'do'
+  =f.label "smoker", "use tobacco."
 
-  =label_tag "incomeRange", "My income is"
+
+  =label_tag "incomeRange", "My income range is"
   %select{:tabindex => "-1", :name => "incomeRange"}
     %option{:value => "0"} > 25k
     %option{:value => "1"} 25-50k
